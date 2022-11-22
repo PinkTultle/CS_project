@@ -9,3 +9,13 @@ C:\Users\User\OneDrive - 동의대학교\학교\컴퓨터공학과\4학년 1학�
 C:\Users\User\OneDrive - 동의대학교\학교\컴퓨터공학과\4학년 1학기\비주얼 프로그래밍\팀 프로젝트\TeamProject\obj\Debug\TeamProject.csproj.CoreCompileInputs.cache
 C:\Users\User\OneDrive - 동의대학교\학교\컴퓨터공학과\4학년 1학기\비주얼 프로그래밍\팀 프로젝트\TeamProject\obj\Debug\TeamProject.exe
 C:\Users\User\OneDrive - 동의대학교\학교\컴퓨터공학과\4학년 1학기\비주얼 프로그래밍\팀 프로젝트\TeamProject\obj\Debug\TeamProject.pdb
+D:\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\bin\Debug\TeamProject.exe.config
+D:\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\bin\Debug\TeamProject.exe
+D:\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\bin\Debug\TeamProject.pdb
+D:\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Debug\TeamProject.csproj.AssemblyReference.cache
+D:\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Debug\TeamProject.Form1.resources
+D:\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Debug\TeamProject.Properties.Resources.resources
+D:\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Debug\TeamProject.csproj.GenerateResource.cache
+D:\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Debug\TeamProject.csproj.CoreCompileInputs.cache
+D:\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Debug\TeamProject.exe
+D:\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Debug\TeamProject.pdb
