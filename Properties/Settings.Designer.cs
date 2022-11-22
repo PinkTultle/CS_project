@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TeamProject.Properties
+namespace Test.Properties
 {
 
 
