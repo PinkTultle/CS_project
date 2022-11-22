@@ -10,26 +10,17 @@ using System.Windows.Forms;
 
 namespace Test
 {
-    public partial class Form1 : Form
+    public partial class Form4 : Form
     {
-        public Form1()
+        public Form4()
         {
             InitializeComponent();
             this.MaximizeBox = false;
-            
         }
 
-        private void Form1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             this.Close();
-        }
-
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Form2 form2 = new Form2();
-            form2.ShowDialog();
         }
     }
 }
