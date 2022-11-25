@@ -9,15 +9,25 @@ namespace SMP_cs
     internal class Company
     {
 
-        private string code, name;
-        private int number;
+        public string Name { get; set; }
+        public string Number{ get; set; } 
+        public string Code { get; set; }
 
-        public Company(string code, string name, int num)
+        //클래스 생성자
+        public Company(string name, string phone, string ID)
         {
-            this.code = code;
-            this.name = name;
-            this.number = num;
+            Name = name;
+            Number = phone;
+            Code = ID;
         }
+
+        //회사 정보 변경
+        public void Update_val<T>(string target, T val)
+        {
+
+        }
+
+
 
     }
 }

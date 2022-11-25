@@ -34,10 +34,10 @@ namespace SMP_cs
             return true;
         }
 
-        //
+        //정보 변경 메서드 변경 항목 : target / 바꿀 값 : var
         static public void Update_val<T> (string target, T val)
         {
-            // 
+            
         }
 
         //삭제 메서드
