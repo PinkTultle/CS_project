@@ -1,4 +1,4 @@
-﻿namespace Test
+﻿namespace SMP_cs
 {
     partial class Form1
     {
