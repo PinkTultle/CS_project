@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace SMP_cs
 {
     public partial class Form3 : Form
     {
+        string sqlQuery = "";
+        DB_connect dB_Connect;
         public Form3()
         {
             InitializeComponent();
@@ -20,6 +23,10 @@ namespace SMP_cs
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dB_Connect = new DB_connect();
+            dB_Connect.Open();
+            sqlQuery = $"INSERT INTO Items values('{textBox4.Text}','{textBox1.Text}',{textBox3.Text},{textBox2.Text});";
+            dB_Connect.SQLQuery(sqlQuery);
             this.Close();
         }
     }

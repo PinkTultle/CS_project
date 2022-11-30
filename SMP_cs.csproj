@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Company.cs" />
+    <Compile Include="DB_connect.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

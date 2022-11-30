@@ -51,3 +51,41 @@ C:\공유드라이브\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프
 C:\공유드라이브\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Debug\SMP_cs.csproj.CopyComplete
 C:\공유드라이브\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Debug\SMP_cs.exe
 C:\공유드라이브\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Debug\SMP_cs.pdb
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\SMP_cs.exe.config
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\SMP_cs.exe
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\SMP_cs.pdb
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\Google.Protobuf.dll
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\MySql.Data.dll
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\System.Buffers.dll
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\System.Memory.dll
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\ZstdNet.dll
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\Google.Protobuf.pdb
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\Google.Protobuf.xml
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\MySql.Data.xml
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\System.Buffers.xml
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\System.Memory.xml
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.csproj.SuggestedBindingRedirects.cache
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.Form1.resources
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.Form2.resources
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.Form3.resources
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.Form4.resources
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.Form5.resources
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.Properties.Resources.resources
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.csproj.GenerateResource.cache
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.csproj.CopyComplete
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.exe
+C:\Users\USER\Desktop\Cho\02_Universal\2022\4학년 2학기\비주얼프로그래밍\팀플\Project\obj\Debug\SMP_cs.pdb
