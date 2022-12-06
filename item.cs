@@ -32,7 +32,7 @@ namespace SMP_cs
             //동작 검증후 정상 작동시 true 반환
             //실패시 false 반환
             return false;
-            return true;
+            //return true;
         }
 
         //정보 변경 메서드 변경 항목 : target / 바꿀 값 : var

@@ -15,11 +15,11 @@ namespace SMP_cs
 {
     public partial class Form2 : Form
     {
-        /*
+
         MySqlConnection connection = new MySqlConnection("Server=localhost;Port=3306;Database=Company;Uid=admin;Pwd=!#admin");
-        */
+        
         DB_connect dB_Connect;
-        string sqlQuery = "";
+        string sqlQuery = ""; // sqlQuery문을 담을 문자열
         
         public Form2()
         {
@@ -71,21 +71,53 @@ namespace SMP_cs
             */
             
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             dB_Connect = new DB_connect();
             dB_Connect.Open();
 
-            sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
+            /*sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
+            MySqlCommand cmdDataBase = new MySqlCommand(sqlQuery, connection);*/
+
+            // DataGridView의 열 추가
             dataGridView1.Columns.Add("ItemID", "제품번호");
             dataGridView1.Columns.Add("Name", "제품이름");
             dataGridView1.Columns.Add("Price", "가격");
             dataGridView1.Columns.Add("Count", "보유수량");
 
-            dataGridView1.DataSource = dB_Connect;
+            //dataGridView1.DataSource = dB_Connect;
 
+            // DataGridView 연동 예제 https://youtu.be/hbeyeHCPlOM
+            /*try
+            {
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
+                adapter.SelectCommand = cmdDataBase;
+                DataTable dbdataset = new DataTable();
+                adapter.Fill(dbdataset);
+                BindingSource bSource = new BindingSource();
+
+                bSource.DataSource = dbdataset;
+                dataGridView1.DataSource = bSource;
+                adapter.Update(dbdataset);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // 에러 메시지 출력
+            }*/
+            DataSet ds = GetData();
+            dataGridView1.DataSource = ds.Tables[0];
 
         }
+
+        // 데이터를 가져오는 메소드
+        private DataSet GetData()
+        {
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sqlQuery, connection);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            return ds;
+        }
+
     }
 }
