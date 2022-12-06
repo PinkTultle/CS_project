@@ -15,14 +15,14 @@ namespace Test
         public Form1()
         {
             InitializeComponent();
-            this.MaximizeBox = false;
+            this.MaximizeBox = false;// 전체화면 비활성화
             
         }
 
         private void Form1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Close();
+            this.Hide(); // 로고 화면 숨김
+            this.Close(); // 로고 화면 종료
         }
 
 
