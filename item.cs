@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace SMP_cs
 {
@@ -34,10 +35,10 @@ namespace SMP_cs
             return true;
         }
 
-        //
+        //정보 변경 메서드 변경 항목 : target / 바꿀 값 : var
         static public void Update_val<T> (string target, T val)
         {
-            // 
+            
         }
 
         //삭제 메서드

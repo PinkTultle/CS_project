@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
-namespace Test
+namespace SMP_cs
 {
     public partial class Form2 : Form
     {
+        MySqlConnection connection = new MySqlConnection("Server=localhost;Port=3306;Database=Company;Uid=admin;Pwd=!#admin");
+
         public Form2()
         {
             InitializeComponent();
@@ -41,6 +45,7 @@ namespace Test
             form5.ShowDialog();
         }
 
+<<<<<<< HEAD
         private void button4_Click(object sender, EventArgs e) // 그래프 버튼
         {
 
@@ -49,6 +54,22 @@ namespace Test
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
         {
 
+=======
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+            Company company = new Company("name", "phone", "ID");
+            company.Connect_check();
+            */
+            connection.Open();
+            string sql = "SELECT * FROM Items";
+
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            MySqlDataReader table = cmd.ExecuteReader();
+
+            listBox1.Items.Add(table);
+            
+>>>>>>> b281288602e75b06db633c3253db50367b0232dc
         }
     }
 }

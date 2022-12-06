@@ -1,0 +1,10 @@
+C:\Users\User\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Release\SMP_cs.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Release\SMP_cs.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Release\SMP_cs.Form1.resources
+C:\Users\User\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Release\SMP_cs.Form2.resources
+C:\Users\User\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Release\SMP_cs.Form3.resources
+C:\Users\User\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Release\SMP_cs.Form4.resources
+C:\Users\User\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Release\SMP_cs.Form5.resources
+C:\Users\User\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Release\SMP_cs.Properties.Resources.resources
+C:\Users\User\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Release\SMP_cs.csproj.GenerateResource.cache
+C:\Users\User\OneDrive\기본폴더\대학\3학년 2학기\비쥬얼 프로그래밍\팀프로젝트\program_file\obj\Release\SMP_cs.csproj.CoreCompileInputs.cache
