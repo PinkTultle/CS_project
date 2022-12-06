@@ -37,12 +37,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "dad"});
             this.comboBox1.Location = new System.Drawing.Point(33, 31);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
@@ -122,10 +122,6 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // mySqlConnection1
-            // 
-            this.mySqlConnection1.ConnectionString = "server=localhost;port=3306;database=Company;user id=admin;password=!#admin";
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -143,6 +139,7 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "재고 관리 프로그램(메인 화면)";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +156,5 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
-        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
     }
 }

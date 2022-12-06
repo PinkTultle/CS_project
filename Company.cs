@@ -9,7 +9,6 @@ namespace SMP_cs
 {
     internal class Company
     {
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Port=3306;Database=Company;Uid=admin;Pwd=!#admin");
 
         public string Name { get; set; }
         public string Number{ get; set; } 
@@ -29,30 +28,8 @@ namespace SMP_cs
 
         }
 
-        public bool Connect_check()
-        {
-            try
-            {
-                connection.Open();
-                string sql = "SELECT * FROM Items";
 
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                MySqlDataReader table = cmd.ExecuteReader();
 
-                while (table.Read())
-                {
-                    Console.WriteLine("{0} {1} {2} {3}", table["ItemID"], table["Name"], table["Price"], table["Count"]);
-                }
-                return true;
-            }
-            catch
-            {
-                Console.WriteLine("don't connect table");
-                return false;
-            }
-            
-
-        }
 
     }
 }
