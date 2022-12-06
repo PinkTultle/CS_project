@@ -9,12 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SMP_cs
 {
     public partial class Form2 : Form
     {
         MySqlConnection connection = new MySqlConnection("Server=localhost;Port=3306;Database=Company;Uid=admin;Pwd=!#admin");
+
+        DB_connect dB_Connect;
+        string sqlQuery = "";
 
         public Form2()
         {
@@ -45,17 +49,13 @@ namespace SMP_cs
             form5.ShowDialog();
         }
 
-<<<<<<< HEAD
+
         private void button4_Click(object sender, EventArgs e) // 그래프 버튼
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
-        {
-
-=======
-        private void button1_Click(object sender, EventArgs e)
         {
             /*
             Company company = new Company("name", "phone", "ID");
@@ -67,9 +67,23 @@ namespace SMP_cs
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             MySqlDataReader table = cmd.ExecuteReader();
 
-            listBox1.Items.Add(table);
             
->>>>>>> b281288602e75b06db633c3253db50367b0232dc
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            dB_Connect = new DB_connect();
+            dB_Connect.Open();
+
+            sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
+            dataGridView1.Columns.Add("ItemID", "제품번호");
+            dataGridView1.Columns.Add("Name", "제품이름");
+            dataGridView1.Columns.Add("Price", "가격");
+            dataGridView1.Columns.Add("Count", "보유수량");
+
+            dataGridView1.DataSource = dB_Connect;
+
+
         }
     }
 }
