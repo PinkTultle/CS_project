@@ -36,8 +36,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,10 +115,6 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // mySqlConnection1
-            // 
-            this.mySqlConnection1.ConnectionString = "server=localhost;port=3306;database=Company;user id=admin;password=!#admin";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -127,6 +123,10 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(520, 294);
             this.dataGridView1.TabIndex = 9;
+            // 
+            // mySqlConnection1
+            // 
+            this.mySqlConnection1.ConnectionString = "server=localhost;port=3306;database=Company;user id=admin;password=!#admin";
             // 
             // Form2
             // 
@@ -162,7 +162,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
-        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
     }
 }

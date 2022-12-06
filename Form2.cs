@@ -15,11 +15,12 @@ namespace SMP_cs
 {
     public partial class Form2 : Form
     {
+        /*
         MySqlConnection connection = new MySqlConnection("Server=localhost;Port=3306;Database=Company;Uid=admin;Pwd=!#admin");
-
+        */
         DB_connect dB_Connect;
         string sqlQuery = "";
-
+        
         public Form2()
         {
             InitializeComponent();
@@ -61,12 +62,13 @@ namespace SMP_cs
             Company company = new Company("name", "phone", "ID");
             company.Connect_check();
             */
+            /*
             connection.Open();
             string sql = "SELECT * FROM Items";
 
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             MySqlDataReader table = cmd.ExecuteReader();
-
+            */
             
         }
 
