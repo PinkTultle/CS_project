@@ -17,6 +17,7 @@ namespace SMP_cs
     {
         DB_connect dB_Connect;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
+        DataTable dt = new DataTable();
 
         public Form2()
         {
@@ -29,6 +30,60 @@ namespace SMP_cs
             
         }
 
+        
+
+        private void button1_Click(object sender, EventArgs e) // 검색 버튼
+        {
+
+            /*Company company = new Company("name", "phone", "ID");
+            company.Connect_check();
+
+            connection.Open();
+            string sql = "SELECT * FROM Items";
+
+            MySqlCommand cmd = new MySqlCommand(sql, connection);
+            MySqlDataReader table = cmd.ExecuteReader();*/
+
+            
+        }
+
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            dB_Connect = new DB_connect();
+            dB_Connect.Open();
+
+            sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
+
+            DataPrint();
+        }
+
+        // DataGridView에 데이터 출력하는 함수
+        private void DataPrint()
+        {
+            try
+            {
+                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
+                myDataAdapter.SelectCommand = new MySqlCommand(sqlQuery, dB_Connect.conn);
+                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
+                DataSet ds = new DataSet();
+
+                myDataAdapter.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+
+                dB_Connect.conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e) // 물품 정보 수정 버튼
+        {
+
+        }
         private void button5_Click(object sender, EventArgs e) // 물품입고 버튼
         {
             Form3 form3 = new Form3();
@@ -52,49 +107,5 @@ namespace SMP_cs
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e) // 검색 버튼
-        {
-            /*
-            Company company = new Company("name", "phone", "ID");
-            company.Connect_check();
-            */
-            /*
-            connection.Open();
-            string sql = "SELECT * FROM Items";
-
-            MySqlCommand cmd = new MySqlCommand(sql, connection);
-            MySqlDataReader table = cmd.ExecuteReader();
-            */
-            
-        }
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            dB_Connect = new DB_connect();
-            dB_Connect.Open();
-
-            sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
-
-            try
-            {
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-                myDataAdapter.SelectCommand = new MySqlCommand(sqlQuery, dB_Connect.conn);
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                DataSet ds = new DataSet();
-
-                DataTable dt = new DataTable();
-                myDataAdapter.Fill(dt);
-
-                dataGridView1.DataSource = dt;
-
-                dB_Connect.conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
     }
 }

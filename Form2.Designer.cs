@@ -38,6 +38,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,11 +129,22 @@
             // 
             this.mySqlConnection1.ConnectionString = "server=localhost;port=3306;database=Company;user id=admin;password=!#admin";
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(585, 138);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(143, 33);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "물품 정보 수정";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label1);
@@ -164,5 +176,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
+        private System.Windows.Forms.Button button6;
     }
 }
