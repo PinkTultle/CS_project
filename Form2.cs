@@ -55,7 +55,7 @@ namespace SMP_cs
 
             sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
 
-            DataPrint();
+            DataPrint(); // DataGridView 출력 함수 호출
         }
 
         // DataGridView에 데이터 출력하는 함수
@@ -101,7 +101,6 @@ namespace SMP_cs
             Form5 form5 = new Form5();
             form5.ShowDialog();
         }
-
 
         private void button4_Click(object sender, EventArgs e) // 그래프 버튼
         {
