@@ -15,12 +15,9 @@ namespace SMP_cs
 {
     public partial class Form2 : Form
     {
-
-        MySqlConnection connection = new MySqlConnection("Server=localhost;Port=3306;Database=Company;Uid=admin;Pwd=!#admin");
-        
         DB_connect dB_Connect;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
-        
+
         public Form2()
         {
             InitializeComponent();
@@ -76,47 +73,27 @@ namespace SMP_cs
             dB_Connect = new DB_connect();
             dB_Connect.Open();
 
-            /*sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
-            MySqlCommand cmdDataBase = new MySqlCommand(sqlQuery, connection);*/
+            sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
 
-            // DataGridView의 열 추가
-            dataGridView1.Columns.Add("ItemID", "제품번호");
-            dataGridView1.Columns.Add("Name", "제품이름");
-            dataGridView1.Columns.Add("Price", "가격");
-            dataGridView1.Columns.Add("Count", "보유수량");
-
-            //dataGridView1.DataSource = dB_Connect;
-
-            // DataGridView 연동 예제 https://youtu.be/hbeyeHCPlOM
-            /*try
+            try
             {
+                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
+                myDataAdapter.SelectCommand = new MySqlCommand(sqlQuery, dB_Connect.conn);
+                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
+                DataSet ds = new DataSet();
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                adapter.SelectCommand = cmdDataBase;
-                DataTable dbdataset = new DataTable();
-                adapter.Fill(dbdataset);
-                BindingSource bSource = new BindingSource();
+                DataTable dt = new DataTable();
+                myDataAdapter.Fill(dt);
 
-                bSource.DataSource = dbdataset;
-                dataGridView1.DataSource = bSource;
-                adapter.Update(dbdataset);
+                dataGridView1.DataSource = dt;
+
+                dB_Connect.conn.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message); // 에러 메시지 출력
-            }*/
-            DataSet ds = GetData();
-            dataGridView1.DataSource = ds.Tables[0];
+                MessageBox.Show(ex.Message);
+            }
 
-        }
-
-        // 데이터를 가져오는 메소드
-        private DataSet GetData()
-        {
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sqlQuery, connection);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
-            return ds;
         }
 
     }

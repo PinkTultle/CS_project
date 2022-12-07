@@ -11,11 +11,11 @@ namespace SMP_cs
 {
    class DB_connect
     {
-            string _server = "43.200.223.225"; //DB 서버 주소, 로컬일 경우 localhost
-            int _port = 3306; //DB 서버 포트
+            string _server = "wwater.xyz"; //DB 서버 주소, 로컬일 경우 localhost
+            int _port = 31001; //DB 서버 포트
             string _database = "todolist"; //DB 이름
-            string _id = "admin"; //계정 아이디
-            string _pw = "!#admin"; //계정 비밀번호
+            string _id = "todolist"; //계정 아이디
+            string _pw = "yJma3IHh"; //계정 비밀번호
             string _connectionAddress = "";
             public MySqlConnection conn;
 
