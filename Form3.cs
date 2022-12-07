@@ -18,16 +18,19 @@ namespace SMP_cs
         public Form3()
         {
             InitializeComponent();
-            this.MaximizeBox = false;
+            this.MaximizeBox = false; // 전체화면 비활성화
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // 입고 버튼
         {
             dB_Connect = new DB_connect();
             dB_Connect.Open();
             sqlQuery = $"INSERT INTO Items values('{textBox4.Text}','{textBox1.Text}',{textBox3.Text},{textBox2.Text});";
             dB_Connect.SQLQuery(sqlQuery);
             this.Close();
+
+            // 텍스트 박스에 담긴 값 DB로 전송
+
         }
     }
 }

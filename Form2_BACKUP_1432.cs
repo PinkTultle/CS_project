@@ -15,17 +15,16 @@ namespace SMP_cs
 {
     public partial class Form2 : Form
     {
-<<<<<<< .merge_file_a16548
+<<<<<<< HEAD
 =======
         DB_connect dB_Connect;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
         DataTable dt = new DataTable();
 
->>>>>>> .merge_file_a04736
+>>>>>>> upstream/master
         public Form2()
         {
             InitializeComponent();
-            this.MaximizeBox = false;
             this.MaximizeBox = false; // 전체화면 비활성화
         }
 
@@ -34,7 +33,6 @@ namespace SMP_cs
             
         }
 
-        private void button5_Click(object sender, EventArgs e)
         
 
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
@@ -107,17 +105,17 @@ namespace SMP_cs
             form5.ShowDialog();
         }
 
-<<<<<<< .merge_file_a16548
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button4_Click(object sender, EventArgs e) // 그래프 버튼
         {
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> upstream/master
         }
 
         private void Form2_Load(object sender, EventArgs e)
-=======
-
-        private void button4_Click(object sender, EventArgs e) // 그래프 버튼
->>>>>>> .merge_file_a04736
         {
 
         }

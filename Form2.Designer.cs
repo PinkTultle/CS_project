@@ -31,18 +31,28 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
+            this.button6 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+>>>>>>> upstream/master
             this.SuspendLayout();
             // 
             // comboBox1
             // 
+<<<<<<< HEAD
             this.comboBox1.Items.AddRange(new object[] {
             "dad"});
+=======
+            this.comboBox1.FormattingEnabled = true;
+>>>>>>> upstream/master
             this.comboBox1.Location = new System.Drawing.Point(33, 31);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
@@ -65,6 +75,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+<<<<<<< HEAD
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -74,6 +85,8 @@
             this.listBox1.Size = new System.Drawing.Size(503, 304);
             this.listBox1.TabIndex = 3;
             // 
+=======
+>>>>>>> upstream/master
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(585, 260);
@@ -102,6 +115,7 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "그래프";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -122,17 +136,47 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+<<<<<<< HEAD
+=======
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(33, 121);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(520, 294);
+            this.dataGridView1.TabIndex = 9;
+            // 
+            // mySqlConnection1
+            // 
+            this.mySqlConnection1.ConnectionString = "server=localhost;port=3306;database=Company;user id=admin;password=!#admin";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(585, 138);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(143, 33);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "물품 정보 수정";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+>>>>>>> upstream/master
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.dataGridView1);
+>>>>>>> upstream/master
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
@@ -140,6 +184,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "재고 관리 프로그램(메인 화면)";
             this.Load += new System.EventHandler(this.Form2_Load);
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+>>>>>>> upstream/master
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,11 +198,16 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
+        private System.Windows.Forms.Button button6;
+>>>>>>> upstream/master
     }
 }
