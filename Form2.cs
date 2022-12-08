@@ -92,13 +92,24 @@ namespace SMP_cs
                 dt.Columns[2].ColumnName = "가격";
                 dt.Columns[3].ColumnName = "수량";
 
-                dataGridView1.DataSource = dt; // DataGridView에 dt 출력
-
-                
-
-
                 // DataGridView 열 색상 변경
-                //dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.RosyBrown;
+                dataGridView1.EnableHeadersVisualStyles = false;
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Lavender;
+
+                // 중복 선택 불가
+                dataGridView1.MultiSelect = false;
+
+                // 행 단위로 클릭
+                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                // DataGridView에 dt 출력  
+                dataGridView1.DataSource = dt;
+
+                // DataGridView 첫 번째 열 출력하지 않기
+                dataGridView1.RowHeadersVisible = false;
+
+                // 목록과 DataGridView 크기 맞추기
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 dB_Connect.conn.Close();
             }
