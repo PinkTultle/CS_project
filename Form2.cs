@@ -30,8 +30,6 @@ namespace SMP_cs
             
         }
 
-        
-
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
         {
 
@@ -44,7 +42,16 @@ namespace SMP_cs
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             MySqlDataReader table = cmd.ExecuteReader();*/
 
+
+            // DataView.RowFilter 사용하여 검색 기능 구현 시도
+            DataTable newDt = new DataTable();
+            newDt = dt;
+            string searchValue = textBox1.Text; // 텍스트박스에 입력된 값
             
+            newDt.DefaultView.RowFilter = String.Format("Name = '{0}'", searchValue);
+
+
+            dataGridView1.DataSource = newDt;
         }
 
 
