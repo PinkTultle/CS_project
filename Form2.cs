@@ -32,7 +32,6 @@ namespace SMP_cs
 
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
         {
-
             /*Company company = new Company("name", "phone", "ID");
             company.Connect_check();
 
@@ -42,21 +41,30 @@ namespace SMP_cs
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             MySqlDataReader table = cmd.ExecuteReader();*/
 
-
             DataTable newDt = new DataTable();
             newDt = dt;
             string searchValue = textBox1.Text; // 텍스트박스에 입력된 값
+
+            if(searchValue != "") // 검색값이 공백이 아닌 경우
+            {
+                if (comboBox1.SelectedItem.ToString() == "제품명") // 콤보박스 [제품명]
+                {
+                    newDt.DefaultView.RowFilter = String.Format("제품명 = '{0}'", searchValue);
+                    dataGridView1.DataSource = newDt;
+                }
+                else // 콤보박스 [제품코드]
+                {
+                    newDt.DefaultView.RowFilter = String.Format("제품코드 = '{0}'", searchValue);
+                    dataGridView1.DataSource = newDt;
+                }
+            }
+            else // 빈값을 검색할 경우
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.Refresh();
+                dataGridView1.DataSource = dt;
+            }
             
-            if(comboBox1.SelectedItem.ToString() == "제품명")
-            {
-                newDt.DefaultView.RowFilter = String.Format("Name = '{0}'", searchValue);
-                dataGridView1.DataSource = newDt;
-            }
-            else
-            {
-                newDt.DefaultView.RowFilter = String.Format("ItemID = '{0}'", searchValue);
-                dataGridView1.DataSource = newDt;
-            }
         }
         
         private void Form2_Load(object sender, EventArgs e)
@@ -72,6 +80,10 @@ namespace SMP_cs
             comboBox1.SelectedIndex = 0; // 첫 번째 값 디폴트 선택
 
             DataPrint();
+
+            // 현재 시각 타이머
+            timer1.Interval = 100;
+            timer1.Start();
         }
 
         // DataGridView에 데이터 출력하는 함수
@@ -102,14 +114,14 @@ namespace SMP_cs
                 // 행 단위로 클릭
                 dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-                // DataGridView에 dt 출력  
-                dataGridView1.DataSource = dt;
-
-                // DataGridView 첫 번째 열 출력하지 않기
+                // DataGridView 첫 번째 열 출력하지 않기 
                 dataGridView1.RowHeadersVisible = false;
 
                 // 목록과 DataGridView 크기 맞추기
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                // DataGridView에 dt 출력  
+                dataGridView1.DataSource = dt;
 
                 dB_Connect.conn.Close();
             }
@@ -145,6 +157,13 @@ namespace SMP_cs
         private void button4_Click(object sender, EventArgs e) // 그래프 버튼
         {
 
+        }
+
+        // 현재 시각 타이머
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label4.Text = DateTime.Now.ToLongDateString(); // 날짜
+            label2.Text = DateTime.Now.ToLongTimeString(); // 시간
         }
     }
 }
