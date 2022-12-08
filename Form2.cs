@@ -30,8 +30,6 @@ namespace SMP_cs
             
         }
 
-        
-
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
         {
 
@@ -44,16 +42,35 @@ namespace SMP_cs
             MySqlCommand cmd = new MySqlCommand(sql, connection);
             MySqlDataReader table = cmd.ExecuteReader();*/
 
+
+            DataTable newDt = new DataTable();
+            newDt = dt;
+            string searchValue = textBox1.Text; // 텍스트박스에 입력된 값
             
+            newDt.DefaultView.RowFilter = String.Format("Name = '{0}'", searchValue);
+
+            dataGridView1.DataSource = newDt;
+
+
+            // 콤보박스 기능 연결 시도
+            if(comboBox1.SelectedItem.ToString() == "제품명")
+            {
+
+            }
         }
 
-
+        
         private void Form2_Load(object sender, EventArgs e)
         {
             dB_Connect = new DB_connect();
             dB_Connect.Open();
 
             sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
+
+            // 콤보 박스
+            string[] comboData = {"제품명", "제품코드"};
+            comboBox1.Items.AddRange(comboData);
+            comboBox1.SelectedIndex = 0; // 첫 번째 값 디폴트 선택
 
             DataPrint();
         }
