@@ -51,22 +51,23 @@ namespace SMP_cs
             sqlQuery = $"UPDATE Items SET Count = Count - {textBox3.Text} WHERE Name ='{textBox1.Text}';";
             dB_Connect.SQLQuery(sqlQuery);
 
+            MessageBox.Show("itme_count_update good");
+ 
 
 
-            dt_item = dB_Connect.Copy_DT(dt_item, "Items");
+
+            /*dt_item = dB_Connect.Copy_DT(dt_item, "Items");
             dt_com = dB_Connect.Copy_DT(dt_com, "Company");
 
             DataRow[] dt_it = dt_item.Select($"{tg_item}");
             DataRow[] dt_co = dt_com.Select($"{textBox2.Text}");
-
+            */
 
             //Num ItemID  CompanyID Count  Date
 
             //판매기록 데이터 테이블에 기록 추가
-            sqlQuery = $"INSERT INTO SalesRecord values({123/*Num*/},{/*ItemID*/},{/*CompanyID*/},{tg_Count - int.Parse(textBox3.Text)/*Count*/},{ DateTime.Now /*Date*/});";
-
-
-
+            sqlQuery = $"INSERT INTO SalesRecord values({123/*Num*/},{tg_Count - int.Parse(textBox3.Text)/*Count*/},{ DateTime.Now /*Date*/});";
+            dB_Connect.SQLQuery(sqlQuery);
 
             dB_Connect.Close();
             this.Close();
