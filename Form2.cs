@@ -50,17 +50,18 @@ namespace SMP_cs
             
             newDt.DefaultView.RowFilter = String.Format("Name = '{0}'", searchValue);
 
-
             dataGridView1.DataSource = newDt;
         }
 
-
+        
         private void Form2_Load(object sender, EventArgs e)
         {
             dB_Connect = new DB_connect();
             dB_Connect.Open();
 
             sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
+
+            string[] comboData = {"제품명"};
 
             DataPrint();
         }
