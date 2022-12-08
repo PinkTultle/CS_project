@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,6 +41,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mySqlConnection1 = new MySql.Data.MySqlClient.MySqlConnection();
             this.button6 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,9 +75,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(585, 260);
+            this.button2.Location = new System.Drawing.Point(585, 244);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 33);
+            this.button2.Size = new System.Drawing.Size(143, 43);
             this.button2.TabIndex = 4;
             this.button2.Text = "물품 출고";
             this.button2.UseVisualStyleBackColor = true;
@@ -81,9 +85,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(585, 321);
+            this.button3.Location = new System.Drawing.Point(585, 309);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 33);
+            this.button3.Size = new System.Drawing.Size(143, 43);
             this.button3.TabIndex = 5;
             this.button3.Text = "입·출고 내역";
             this.button3.UseVisualStyleBackColor = true;
@@ -91,9 +95,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(585, 382);
+            this.button4.Location = new System.Drawing.Point(585, 372);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(143, 33);
+            this.button4.Size = new System.Drawing.Size(143, 43);
             this.button4.TabIndex = 6;
             this.button4.Text = "그래프";
             this.button4.UseVisualStyleBackColor = true;
@@ -110,9 +114,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(585, 199);
+            this.button5.Location = new System.Drawing.Point(585, 186);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(143, 33);
+            this.button5.Size = new System.Drawing.Size(143, 43);
             this.button5.TabIndex = 8;
             this.button5.Text = "물품 입고";
             this.button5.UseVisualStyleBackColor = true;
@@ -120,22 +124,25 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(33, 121);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(503, 294);
             this.dataGridView1.TabIndex = 9;
@@ -146,19 +153,43 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(585, 138);
+            this.button6.Location = new System.Drawing.Point(585, 121);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(143, 33);
+            this.button6.Size = new System.Drawing.Size(143, 43);
             this.button6.TabIndex = 10;
             this.button6.Text = "물품 정보 수정";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(586, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(142, 23);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "날짜";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(586, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 23);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "시간";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button5);
@@ -192,5 +223,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private MySql.Data.MySqlClient.MySqlConnection mySqlConnection1;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
     }
 }
