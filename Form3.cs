@@ -26,30 +26,23 @@ namespace SMP_cs
         {
             dB_Connect = new DB_connect();
             dB_Connect.Open();
-            string checked_Item = $"SELECT {textBox1.Text} COUNT({textBox1.Text}) FROM Items GROUP BY Name HAVING COUNT({textBox1.Text}) > 1 ;";
-            
             
             dB_dt= dB_Connect.Copy_DT(dB_dt, "Items");
 
-
-
             string Check = $"{textBox1.Text}";
             bool contains = dB_dt.AsEnumerable().Any(row => Check == row.Field<String>("Name"));
-            MessageBox.Show($"{contains}");
 
             if (contains == false)
             {
                 sqlQuery = $"INSERT INTO Items values('{textBox4.Text}','{textBox1.Text}',{textBox3.Text},{textBox2.Text});";
                 dB_Connect.SQLQuery(sqlQuery);
-                this.Close();
             }
             else
             {
                 MessageBox.Show("기존에 존재하는 물품 입니다!\n해당 제품은 제품 정보 변경 기능을 이용하세요!", "알림창", MessageBoxButtons.OK);
             }
-
-
             
+            dB_Connect.Close();
             this.Close();
 
             // 텍스트 박스에 담긴 값 DB로 전송

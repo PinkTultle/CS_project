@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace SMP_cs
 {
@@ -68,14 +69,6 @@ namespace SMP_cs
         //데이터 베이스의 테이블을 복사해서 각 폼에서 사용할 데이터 테이블에 삽입 반환
         public DataTable Copy_DT(DataTable dataTable, string target)
         {
-            /*
-            MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
-            myDataAdapter.SelectCommand = new MySqlCommand(sqlQuery, dB_Connect.conn);
-            MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-            DataSet ds = new DataSet();
-            
-            myDataAdapter.Fill(dt);
-            */
             try
             {
                 DataSet ds = new DataSet();
@@ -94,5 +87,9 @@ namespace SMP_cs
                 return null;
             }
         }
+
+
+
+
     }
 }
