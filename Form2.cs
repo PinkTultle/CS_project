@@ -143,7 +143,7 @@ namespace SMP_cs
 
         private void button2_Click(object sender, EventArgs e) // 물품출고 버튼
         {
-            Form4 form4 = new Form4();
+            Form4 form4 = new Form4("gksk",5);  //그리드뷰 선택 이름과 수량 기입필요
             form4.ShowDialog();
         }
 
