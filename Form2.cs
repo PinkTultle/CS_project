@@ -47,18 +47,17 @@ namespace SMP_cs
             newDt = dt;
             string searchValue = textBox1.Text; // 텍스트박스에 입력된 값
             
-            newDt.DefaultView.RowFilter = String.Format("Name = '{0}'", searchValue);
-
-            dataGridView1.DataSource = newDt;
-
-
-            // 콤보박스 기능 연결 시도
             if(comboBox1.SelectedItem.ToString() == "제품명")
             {
-
+                newDt.DefaultView.RowFilter = String.Format("Name = '{0}'", searchValue);
+                dataGridView1.DataSource = newDt;
+            }
+            else
+            {
+                newDt.DefaultView.RowFilter = String.Format("ItemID = '{0}'", searchValue);
+                dataGridView1.DataSource = newDt;
             }
         }
-
         
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -87,7 +86,19 @@ namespace SMP_cs
 
                 myDataAdapter.Fill(dt);
 
-                dataGridView1.DataSource = dt;
+                // DataTable 열 이름 변경
+                dt.Columns[0].ColumnName = "제품코드";
+                dt.Columns[1].ColumnName = "제품명";
+                dt.Columns[2].ColumnName = "가격";
+                dt.Columns[3].ColumnName = "수량";
+
+                dataGridView1.DataSource = dt; // DataGridView에 dt 출력
+
+                
+
+
+                // DataGridView 열 색상 변경
+                //dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.RosyBrown;
 
                 dB_Connect.conn.Close();
             }
