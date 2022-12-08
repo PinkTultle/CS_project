@@ -43,7 +43,6 @@ namespace SMP_cs
             MySqlDataReader table = cmd.ExecuteReader();*/
 
 
-            // DataView.RowFilter 사용하여 검색 기능 구현 시도
             DataTable newDt = new DataTable();
             newDt = dt;
             string searchValue = textBox1.Text; // 텍스트박스에 입력된 값
@@ -51,6 +50,13 @@ namespace SMP_cs
             newDt.DefaultView.RowFilter = String.Format("Name = '{0}'", searchValue);
 
             dataGridView1.DataSource = newDt;
+
+
+            // 콤보박스 기능 연결 시도
+            if(comboBox1.SelectedItem.ToString() == "제품명")
+            {
+
+            }
         }
 
         
@@ -61,7 +67,10 @@ namespace SMP_cs
 
             sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
 
-            string[] comboData = {"제품명"};
+            // 콤보 박스
+            string[] comboData = {"제품명", "제품코드"};
+            comboBox1.Items.AddRange(comboData);
+            comboBox1.SelectedIndex = 0; // 첫 번째 값 디폴트 선택
 
             DataPrint();
         }
