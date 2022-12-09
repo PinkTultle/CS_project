@@ -76,7 +76,7 @@ namespace SMP_cs
                 DataTable table= new DataTable();
 
                 MySqlDataAdapter da = new MySqlDataAdapter();
-                da.SelectCommand = new MySqlCommand($"select * From {target};", conn);
+                da.SelectCommand = new MySqlCommand($"select * From {target} ORDER BY `Name` ASC;", conn);
                 da.Fill(table);
 
                 return dataTable = table;

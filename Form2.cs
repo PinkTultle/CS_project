@@ -51,18 +51,27 @@ namespace SMP_cs
                 {
                     newDt.DefaultView.RowFilter = String.Format("제품명 = '{0}'", searchValue);
                     dataGridView1.DataSource = newDt;
+
                 }
                 else // 콤보박스 [제품코드]
                 {
                     newDt.DefaultView.RowFilter = String.Format("제품코드 = '{0}'", searchValue);
                     dataGridView1.DataSource = newDt;
                 }
+
+
             }
             else // 빈값을 검색할 경우
             {
+                /*
                 dataGridView1.DataSource = null;
                 dataGridView1.Refresh();
                 dataGridView1.DataSource = dt;
+                */
+
+                newDt.DefaultView.RowFilter = String.Format("");
+                dataGridView1.DataSource = newDt;
+
             }
             
         }
