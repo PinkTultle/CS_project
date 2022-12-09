@@ -47,12 +47,6 @@ namespace SMP_cs
             DataTable newDt = new DataTable();
             newDt = dt;
             string searchValue = textBox1.Text; // 텍스트박스에 입력된 값
-            ArrayList searchWordList = new ArrayList();
-            for (int i= 0; i < searchValue.Length; i++)
-            {
-                searchWordList[i] = searchValue[i];
-            }
-            
 
             if(searchValue != "") // 검색값이 공백이 아닌 경우
             {
@@ -60,21 +54,18 @@ namespace SMP_cs
                 {
                     newDt.DefaultView.RowFilter = String.Format("제품명 = '{0}'", searchValue);
                     dataGridView1.DataSource = newDt;
-
                 }
                 else // 콤보박스 [제품코드]
                 {
                     newDt.DefaultView.RowFilter = String.Format("제품코드 = '{0}'", searchValue);
                     dataGridView1.DataSource = newDt;
                 }
-
             }
             else // 빈값을 검색할 경우
             {
                 newDt.DefaultView.RowFilter = String.Format(""); // 필터링 설정되어있던 것 해제
                 dataGridView1.DataSource = newDt;
             }
-            
         }
         
         private void Form2_Load(object sender, EventArgs e)
