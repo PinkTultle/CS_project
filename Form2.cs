@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,7 @@ namespace SMP_cs
 {
     public partial class Form2 : Form
     {
+
         DB_connect dB_Connect;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
         DataTable dt = new DataTable();
@@ -58,7 +60,6 @@ namespace SMP_cs
                     newDt.DefaultView.RowFilter = String.Format("제품코드 = '{0}'", searchValue);
                     dataGridView1.DataSource = newDt;
                 }
-
 
             }
             else // 빈값을 검색할 경우
