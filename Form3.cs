@@ -15,6 +15,7 @@ namespace SMP_cs
     {
         string sqlQuery = "";
         DB_connect dB_Connect;
+        DataTable dB_dt;
         public Form3()
         {
             InitializeComponent();
@@ -25,8 +26,23 @@ namespace SMP_cs
         {
             dB_Connect = new DB_connect();
             dB_Connect.Open();
-            sqlQuery = $"INSERT INTO Items values('{textBox4.Text}','{textBox1.Text}',{textBox3.Text},{textBox2.Text});";
-            dB_Connect.SQLQuery(sqlQuery);
+            
+            dB_dt= dB_Connect.Copy_DT(dB_dt, "Items");
+
+            string Check = $"{textBox1.Text}";
+            bool contains = dB_dt.AsEnumerable().Any(row => Check == row.Field<String>("Name"));
+
+            if (contains == false)
+            {
+                sqlQuery = $"INSERT INTO Items values('{textBox4.Text}','{textBox1.Text}',{textBox3.Text},{textBox2.Text});";
+                dB_Connect.SQLQuery(sqlQuery);
+            }
+            else
+            {
+                MessageBox.Show("기존에 존재하는 물품 입니다!\n해당 제품은 제품 정보 변경 기능을 이용하세요!", "알림창", MessageBoxButtons.OK);
+            }
+            
+            dB_Connect.Close();
             this.Close();
 
             // 텍스트 박스에 담긴 값 DB로 전송

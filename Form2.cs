@@ -51,18 +51,27 @@ namespace SMP_cs
                 {
                     newDt.DefaultView.RowFilter = String.Format("제품명 = '{0}'", searchValue);
                     dataGridView1.DataSource = newDt;
+
                 }
                 else // 콤보박스 [제품코드]
                 {
                     newDt.DefaultView.RowFilter = String.Format("제품코드 = '{0}'", searchValue);
                     dataGridView1.DataSource = newDt;
                 }
+
+
             }
             else // 빈값을 검색할 경우
             {
+                /*
                 dataGridView1.DataSource = null;
                 dataGridView1.Refresh();
                 dataGridView1.DataSource = dt;
+                */
+
+                newDt.DefaultView.RowFilter = String.Format("");
+                dataGridView1.DataSource = newDt;
+
             }
             
         }
@@ -143,7 +152,7 @@ namespace SMP_cs
 
         private void button2_Click(object sender, EventArgs e) // 물품출고 버튼
         {
-            Form4 form4 = new Form4();
+            Form4 form4 = new Form4("gksk",5);  //그리드뷰 선택 이름과 수량 기입필요
             form4.ShowDialog();
         }
 
