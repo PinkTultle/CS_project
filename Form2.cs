@@ -153,7 +153,6 @@ namespace SMP_cs
             form5.ShowDialog();
         }
 
-
         private void button4_Click(object sender, EventArgs e) // 그래프 버튼
         {
 
