@@ -97,12 +97,21 @@ namespace SMP_cs
                 ds = new DataSet();
 
                 myDataAdapter.Fill(dt);
-
+                
                 // DataTable 열 이름 변경
                 dt.Columns[0].ColumnName = "제품코드";
                 dt.Columns[1].ColumnName = "제품명";
                 dt.Columns[2].ColumnName = "가격";
                 dt.Columns[3].ColumnName = "수량";
+                
+                /*
+                //데이터 그리드뷰 컴럼명을 매핑
+                dataGridView1.Columns["ItemID"].HeaderText = "제품코드";
+                dataGridView1.Columns["Name"].HeaderText = "제품명";
+                dataGridView1.Columns["Price"].HeaderText = "가격";
+                dataGridView1.Columns["Count"].HeaderText = "수량";
+                */
+
 
                 // DataGridView 열 색상 변경
                 dataGridView1.EnableHeadersVisualStyles = false;
@@ -123,6 +132,7 @@ namespace SMP_cs
                 // DataGridView에 dt 출력  
                 dataGridView1.DataSource = dt;
 
+                dB_Connect.Close();
             }
             catch (Exception ex)
             {
@@ -171,10 +181,63 @@ namespace SMP_cs
 
         public void Update_DB()
         {
+            dB_Connect.Open();
+            sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
 
-            MySqlConnection 
+            MySqlCommand cd= new MySqlCommand(sqlQuery, dB_Connect.conn);
+
+            try
+            {
+                dt.Clear();
+                myDataAdapter.SelectCommand = cd;
+                //myDataAdapter.Fill(dt);
+                BindingSource Bsous = new BindingSource();
+
+                Bsous.DataSource = dt;
+                dataGridView1.DataSource = Bsous;
+                myDataAdapter.Update(dt);
+
+                
+                // DataTable 열 이름 변경
+                dt.Columns[0].ColumnName = "제품코드";
+                dt.Columns[1].ColumnName = "제품명";
+                dt.Columns[2].ColumnName = "가격";
+                dt.Columns[3].ColumnName = "수량";
+                
+
+                /*
+                //데이터 그리드뷰 컴럼명을 매핑
+                dataGridView1.Columns["ItemID"].HeaderText = "제품코드";
+                dataGridView1.Columns["Name"].HeaderText = "제품명";
+                dataGridView1.Columns["Price"].HeaderText = "가격";
+                dataGridView1.Columns["Count"].HeaderText = "수량";
+                */
 
 
+                // DataGridView 열 색상 변경
+                dataGridView1.EnableHeadersVisualStyles = false;
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Lavender;
+
+                // 중복 선택 불가
+                dataGridView1.MultiSelect = false;
+
+                // 행 단위로 클릭
+                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                // DataGridView 첫 번째 열 출력하지 않기 
+                dataGridView1.RowHeadersVisible = false;
+
+                // 목록과 DataGridView 크기 맞추기
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                // DataGridView에 dt 출력  
+                dataGridView1.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
