@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Org.BouncyCastle.Asn1.X509;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Org.BouncyCastle.Crypto.Modes.Gcm;
+using System.Xml;
 
 namespace SMP_cs
 {
@@ -100,6 +101,20 @@ namespace SMP_cs
                 return table;
 
 
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        public DataSet GetData(string query)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter(query, conn);
+                sqlDataAdapter.Fill(ds);
+                return ds;
             }
             catch (Exception e)
             {
