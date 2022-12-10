@@ -43,74 +43,79 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 92);
+            this.label1.Location = new System.Drawing.Point(91, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "물품명";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 128);
+            this.label2.Location = new System.Drawing.Point(91, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "수량";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(80, 169);
+            this.label3.Location = new System.Drawing.Point(91, 211);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(37, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "가격";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(80, 207);
+            this.label4.Location = new System.Drawing.Point(91, 259);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "코드";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 88);
+            this.textBox1.Location = new System.Drawing.Point(143, 110);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 21);
+            this.textBox1.Size = new System.Drawing.Size(157, 25);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(125, 125);
+            this.textBox2.Location = new System.Drawing.Point(143, 156);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(138, 21);
+            this.textBox2.Size = new System.Drawing.Size(157, 25);
             this.textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(125, 166);
+            this.textBox3.Location = new System.Drawing.Point(143, 208);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(138, 21);
+            this.textBox3.Size = new System.Drawing.Size(157, 25);
             this.textBox3.TabIndex = 6;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(125, 204);
+            this.textBox4.Location = new System.Drawing.Point(143, 255);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(138, 21);
+            this.textBox4.Size = new System.Drawing.Size(157, 25);
             this.textBox4.TabIndex = 7;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(145, 253);
+            this.button1.Location = new System.Drawing.Point(166, 316);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 23);
+            this.button1.Size = new System.Drawing.Size(78, 29);
             this.button1.TabIndex = 8;
-            this.button1.Text = "입고";
+            this.button1.Text = "등록";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -118,18 +123,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(143, 33);
+            this.label5.Location = new System.Drawing.Point(163, 41);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 12);
+            this.label5.Size = new System.Drawing.Size(72, 15);
             this.label5.TabIndex = 9;
-            this.label5.Text = "물품 입고";
+            this.label5.Text = "물품 등록";
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(354, 314);
+            this.ClientSize = new System.Drawing.Size(405, 392);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox4);
@@ -141,6 +146,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "물품 입고";

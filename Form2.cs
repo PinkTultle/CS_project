@@ -30,7 +30,7 @@ namespace SMP_cs
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
@@ -48,7 +48,7 @@ namespace SMP_cs
             newDt = dt;
             string searchValue = textBox1.Text; // 텍스트박스에 입력된 값
 
-            if(searchValue != "") // 검색값이 공백이 아닌 경우
+            if (searchValue != "") // 검색값이 공백이 아닌 경우
             {
                 if (comboBox1.SelectedItem.ToString() == "제품명") // 콤보박스 [제품명]
                 {
@@ -167,6 +167,12 @@ namespace SMP_cs
         {
             label4.Text = DateTime.Now.ToLongDateString(); // 날짜
             label2.Text = DateTime.Now.ToLongTimeString(); // 시간
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form7 form7 = new Form7();
+            form7.ShowDialog();
         }
     }
 }
