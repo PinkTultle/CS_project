@@ -30,7 +30,7 @@ namespace SMP_cs
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            dB_Connect.Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
@@ -48,7 +48,7 @@ namespace SMP_cs
             newDt = dt;
             string searchValue = textBox1.Text; // 텍스트박스에 입력된 값
 
-            if(searchValue != "") // 검색값이 공백이 아닌 경우
+            if (searchValue != "") // 검색값이 공백이 아닌 경우
             {
                 if (comboBox1.SelectedItem.ToString() == "제품명") // 콤보박스 [제품명]
                 {
@@ -124,7 +124,7 @@ namespace SMP_cs
                 // DataGridView에 dt 출력  
                 dataGridView1.DataSource = dt;
 
-
+                dB_Connect.conn.Close();
             }
             catch (Exception ex)
             {
@@ -159,8 +159,7 @@ namespace SMP_cs
 
         private void button4_Click(object sender, EventArgs e) // 그래프 버튼
         {
-            Form6 form6 = new Form6();
-            form6.ShowDialog();
+
         }
 
         // 현재 시각 타이머
