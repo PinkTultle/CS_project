@@ -22,7 +22,7 @@ namespace SMP_cs
             this.MaximizeBox = false; // 전체화면 비활성화
         }
 
-        private void button1_Click(object sender, EventArgs e) // 입고 버튼
+        private void button1_Click(object sender, EventArgs e) // 등록 버튼
         {
             dB_Connect = new DB_connect();
             dB_Connect.Open();
