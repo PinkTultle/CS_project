@@ -159,7 +159,8 @@ namespace SMP_cs
 
         private void button4_Click(object sender, EventArgs e) // 그래프 버튼
         {
-
+            Form6 form6 = new Form6();
+            form6.ShowDialog();
         }
 
         // 현재 시각 타이머
