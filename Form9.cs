@@ -28,20 +28,35 @@ namespace SMP_cs
 
         private void button1_Click(object sender, EventArgs e) // 입고 버튼 클릭 시
         {
-            dB_Connect = new DB_connect();
-            dB_Connect.Open();
+            if (textBox1.Text != "")
+            {
+                dB_Connect = new DB_connect();
+                dB_Connect.Open();
+                dB_Connect.ProceDureSQLQuey("itemhistory", "",label2.Text, textBox1.Text, "입고");
 
-            sqlQuery = $"UPDATE Items SET Count='{textBox1.Text}' WHERE Count='{original_count}'";
-            dB_Connect.SQLQuery(sqlQuery);
 
-            MessageBox.Show($"'{label2.Text}'이(가) '{textBox1.Text}'개 입고되었습니다.", "입고 완료");
 
-            dB_Connect.Close();
+                MessageBox.Show($"'{label2.Text}'이(가) '{textBox1.Text}'개 입고되었습니다.", "입고 완료");
+
+                dB_Connect.Close();
+            }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e) // 트랙바의 값을 텍스트박스에 출력
         {
             textBox1.Text = trackBar1.Value.ToString();
+        }
+
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (textBox1.Text != "")
+                    trackBar1.Value = int.Parse(textBox1.Text);
+                else
+                    MessageBox.Show("값을 입력 후 Enter키 입력 바람");
+            }
         }
     }
 }
