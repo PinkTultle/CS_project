@@ -30,12 +30,22 @@ namespace SMP_cs
         }
         public void LoadList(string record)
         {
-            try
+            string query;
+            if(record == "입고")
             {
-
-                string query = $"select SalesRecord.ItemID,Items.Name,Company.Name,SalesRecord.Count,toDate,Record from SalesRecord,Items,Company " +
+                query = "select SalesRecord.ItemID,Items.Name,Company.Name,SalesRecord.Count,toDate,Record from SalesRecord,Items,Company " +
+                    "where Items.ItemID = SalesRecord.ItemID  " +
+                    "and SalesRecord.Record = '입고'" +
+                    "group by Items.Name;";
+            }
+            else
+            {
+                query = $"select SalesRecord.ItemID,Items.Name,Company.Name,SalesRecord.Count,toDate,Record from SalesRecord,Items,Company " +
                     $"where Items.ItemID = SalesRecord.ItemID and Company.CompanyID = SalesRecord.CompanyID " +
                     $"and SalesRecord.Record = '{record}';";
+            }
+            try
+            {
                 DataTable table = dB_Connect.readSQL(query);
                 dataGridView1.DataSource = table;
                 dB_Connect.Close();

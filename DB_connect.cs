@@ -133,8 +133,6 @@ namespace SMP_cs
                 cmd.Parameters.AddWithValue("@It_Count", s3);
                 cmd.Parameters.AddWithValue("@SL_Record", s4);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("출고 완료");
-
 
 
             }
