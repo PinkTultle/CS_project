@@ -159,6 +159,8 @@ namespace SMP_cs
 
         private void button4_Click(object sender, EventArgs e) // 그래프 버튼
         {
+            Form6 form6 = new Form6();
+            form6.ShowDialog();
 
         }
 
@@ -167,12 +169,6 @@ namespace SMP_cs
         {
             label4.Text = DateTime.Now.ToLongDateString(); // 날짜
             label2.Text = DateTime.Now.ToLongTimeString(); // 시간
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Form7 form7 = new Form7();
-            form7.ShowDialog();
         }
     }
 }
