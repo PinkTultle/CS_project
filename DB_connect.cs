@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using Org.BouncyCastle.Asn1.X509;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Org.BouncyCastle.Crypto.Modes.Gcm;
+using System.Xml;
 
 namespace SMP_cs
 {
@@ -85,6 +88,69 @@ namespace SMP_cs
             {
                 MessageBox.Show($"{ex}");
                 return null;
+            }
+        }
+        public DataTable readSQL(string query)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                DataTable table = new DataTable();
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter(query, conn);
+                sqlDataAdapter.Fill(table);
+                return table;
+
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        public DataSet GetData(string query)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter(query, conn);
+                sqlDataAdapter.Fill(ds);
+                return ds;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        public void ProceDureSQLQuey(string query,string s1, string s2, string s3, string s4)
+        {
+            try
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CP_Name", s1);
+                cmd.Parameters.AddWithValue("@It_Name", s2);
+                cmd.Parameters.AddWithValue("@It_Count", s3);
+                cmd.Parameters.AddWithValue("@SL_Record", s4);
+                cmd.ExecuteNonQuery();
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+        // Mysql 저장 프로시저를 위한 메소드
+        public MySqlConnection Conn
+        {
+            get
+            {
+                return conn;
+            }
+            set
+            {
+                conn = value;
             }
         }
 

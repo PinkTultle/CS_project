@@ -26,7 +26,7 @@ namespace SMP_cs
         }
 
 
-        private void button1_Click(object sender, EventArgs e) // 입고 버튼
+        private void button1_Click(object sender, EventArgs e) // 등록 버튼
         {
             dB_Connect = new DB_connect();
             dB_Connect.Open();
@@ -45,6 +45,7 @@ namespace SMP_cs
             {
                 MessageBox.Show("기존에 존재하는 물품 입니다!\n해당 제품은 제품 정보 변경 기능을 이용하세요!", "알림창", MessageBoxButtons.OK);
             }
+
 
             frm2.Update_DB();
 

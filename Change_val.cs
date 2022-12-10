@@ -16,7 +16,7 @@ namespace SMP_cs
         public object Change_type<T>(T val, string type)
         {
             //입력받은 변수 스트링 형으로 변환
-            val_str= val.ToString();
+            val_str = val.ToString();
             try
             {
                 switch (type)
@@ -37,7 +37,8 @@ namespace SMP_cs
                         return null;
 
                 }
-            } catch
+            }
+            catch
             {
                 //int >> bool / bool > int 과 같이 변환 불가능한 자료형끼리 자료형 변환 시도한 경우 예외처리
                 return null;
@@ -45,23 +46,23 @@ namespace SMP_cs
 
         }
 
-        public object Cheak_dt<T> ( T val, string type)
+        public object Cheak_dt<T>(T val, string type)
         {
             string val_type = val.GetType().Name,
                 int_ty = "int",
                 str_ty = "str",
                 bool_ty = "bool",
                 double_ty = "double";
-            
 
-            if( type== int_ty )
+
+            if (type == int_ty)
             {
-                if(val_type == "Int32")
+                if (val_type == "Int32")
                 {
                     return true;
                 }
                 else return false;
-            } 
+            }
             else if (type == str_ty)
             {
                 if (val_type == "String")
