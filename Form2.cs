@@ -21,17 +21,14 @@ namespace SMP_cs
         DB_connect dB_Connect;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
         DataTable dt = new DataTable();
-        Form3 frm2;
+        MySqlDataAdapter myDataAdapter;
+        MySqlCommandBuilder cb;
+        DataSet ds;
 
         public Form2()
         {
             InitializeComponent();
             this.MaximizeBox = false; // 전체화면 비활성화
-        }
-        public Form2(Form3 _form)
-        {
-            InitializeComponent();
-            frm2 = _form;
         }
 
 
@@ -94,10 +91,10 @@ namespace SMP_cs
         {
             try
             {
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
+                myDataAdapter = new MySqlDataAdapter();
                 myDataAdapter.SelectCommand = new MySqlCommand(sqlQuery, dB_Connect.conn);
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                DataSet ds = new DataSet();
+                cb = new MySqlCommandBuilder(myDataAdapter);
+                ds = new DataSet();
 
                 myDataAdapter.Fill(dt);
 
@@ -139,7 +136,7 @@ namespace SMP_cs
         }
         private void button5_Click(object sender, EventArgs e) // 물품입고 버튼
         {
-            Form3 form3 = new Form3();
+            Form3 form3 = new Form3(this);
             form3.ShowDialog();
         }
 
@@ -174,14 +171,10 @@ namespace SMP_cs
 
         public void Update_DB()
         {
-            /*
-            dataGridView1.Columns.Clear(); 
-            dataGridView1.Rows.Clear();
-            dataGridView1.Refresh();
-            */
 
-            dataGridView1.Refresh();
-            dataGridView1.Update();
+            MySqlConnection 
+
+
 
         }
 

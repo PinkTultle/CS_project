@@ -16,12 +16,15 @@ namespace SMP_cs
         string sqlQuery = "";
         DB_connect dB_Connect;
         DataTable dB_dt;
+        Form2 frm2;
 
-        public Form3()
+        public Form3(Form2 frm2)
         {
             InitializeComponent();
             this.MaximizeBox = false; // 전체화면 비활성화
+            this.frm2 = frm2;
         }
+
 
         private void button1_Click(object sender, EventArgs e) // 입고 버튼
         {
@@ -43,8 +46,7 @@ namespace SMP_cs
                 MessageBox.Show("기존에 존재하는 물품 입니다!\n해당 제품은 제품 정보 변경 기능을 이용하세요!", "알림창", MessageBoxButtons.OK);
             }
 
-            Form2 form2 = new Form2(this);
-            form2.Update_DB();
+            frm2.Update_DB();
 
             dB_Connect.Close();
             this.Close();
