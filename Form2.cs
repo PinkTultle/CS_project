@@ -190,7 +190,7 @@ namespace SMP_cs
             {
                 dt.Clear();
                 myDataAdapter.SelectCommand = cd;
-                //myDataAdapter.Fill(dt);
+                myDataAdapter.Fill(dt);
                 BindingSource Bsous = new BindingSource();
 
                 Bsous.DataSource = dt;
