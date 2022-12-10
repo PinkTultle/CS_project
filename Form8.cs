@@ -17,6 +17,7 @@ namespace SMP_cs
         DataTable dB_dt;
         DataTable dt_item;
         DataTable dt_com;
+        Form2 frm2;
         string tg_item;
         string original_name;
         string original_price;
@@ -30,13 +31,14 @@ namespace SMP_cs
             form4.ShowDialog();
         }*/
 
-        public Form8(string itemID, string itemName, string itemCount)
+        public Form8(string itemID, string itemName, string itemCount, Form2 form2)
         {
             InitializeComponent();
             this.MaximizeBox = false;
             tg_item = textBox1.Text = itemID;
             original_name = textBox2.Text = itemName;
             original_price = textBox3.Text = itemCount;
+            this.frm2 = form2;
         }
 
         private void button1_Click(object sender, EventArgs e) // 수정 버튼 클릭 시
@@ -55,6 +57,8 @@ namespace SMP_cs
                 dB_Connect.SQLQuery(sqlQuery);
 
                 dB_Connect.Close();
+                frm2.Update_DB();
+
                 this.Close();
             }
             else // 빈칸이 있는 경우

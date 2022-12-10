@@ -17,13 +17,15 @@ namespace SMP_cs
         string sqlQuery;
         DB_connect dB_Connect;
         string original_count;
-        public Form9(string itemName, int itemCount)
+        Form2 frm2;
+        public Form9(string itemName, int itemCount, Form2 form2)
         {
             InitializeComponent();
             this.MaximizeBox = false;
             label2.Text = itemName;
             original_count = label4.Text = itemCount.ToString();
             textBox1.Text = "0";
+            this.frm2 = form2;
         }
 
         private void button1_Click(object sender, EventArgs e) // 입고 버튼 클릭 시
@@ -39,6 +41,9 @@ namespace SMP_cs
                 MessageBox.Show($"'{label2.Text}'이(가) '{textBox1.Text}'개 입고되었습니다.", "입고 완료");
 
                 dB_Connect.Close();
+                frm2.Update_DB();
+                this.Close();
+
             }
         }
 

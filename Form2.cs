@@ -137,7 +137,7 @@ namespace SMP_cs
             string itemID = selecRow.Cells[0].Value.ToString(); // 선택된 항목의 제품 코드
             string itemName = selecRow.Cells[1].Value.ToString(); // 선택된 항목의 제품명
             string itemPrice = selecRow.Cells[2].Value.ToString(); // 선택된 항목의 가격
-            Form8 form8 = new Form8(itemID, itemName, itemPrice);
+            Form8 form8 = new Form8(itemID, itemName, itemPrice, this);
             form8.ShowDialog();
         }
         private void button5_Click(object sender, EventArgs e) // 물품 등록 버튼
@@ -150,7 +150,7 @@ namespace SMP_cs
             DataGridViewRow selecRow = dataGridView1.SelectedRows[0];
             string itemName = selecRow.Cells[1].Value.ToString();
             int itemCount = int.Parse(selecRow.Cells[3].Value.ToString());
-            Form9 form9 = new Form9(itemName, itemCount);
+            Form9 form9 = new Form9(itemName, itemCount, this);
             form9.ShowDialog();
         }
 
@@ -159,7 +159,7 @@ namespace SMP_cs
             DataGridViewRow selecRow = dataGridView1.SelectedRows[0];
             string itemName = selecRow.Cells[1].Value.ToString();
             int itemCount = int.Parse(selecRow.Cells[3].Value.ToString());
-            Form4 form4 = new Form4($"{itemName}" , itemCount);  //그리드뷰 선택 이름과 수량 기입필요
+            Form4 form4 = new Form4($"{itemName}" , itemCount, this);  //그리드뷰 선택 이름과 수량 기입필요
             form4.ShowDialog();
         }
 
