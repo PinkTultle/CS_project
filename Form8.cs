@@ -19,6 +19,7 @@ namespace SMP_cs
         DataTable dt_com;
         string tg_item;
         string original_name;
+        string original_price;
 
         /*private void button2_Click(object sender, EventArgs e) // 물품출고 버튼
         {
@@ -35,7 +36,7 @@ namespace SMP_cs
             this.MaximizeBox = false;
             tg_item = textBox1.Text = itemID;
             original_name = textBox2.Text = itemName;
-            textBox3.Text = itemCount;
+            original_price = textBox3.Text = itemCount;
         }
 
         private void button1_Click(object sender, EventArgs e) // 수정 버튼 클릭 시
@@ -43,9 +44,14 @@ namespace SMP_cs
             dB_Connect = new DB_connect();
             dB_Connect.Open();
             
-            if(textBox2.Text != "" && textBox3.Text != "")
+            if(textBox2.Text != "" && textBox3.Text != "") // 빈칸 없이 잘 입력된 경우
             {
+                // DB의 물품명 변경
                 sqlQuery = $"UPDATE Items SET Name='{textBox2.Text}' WHERE Name='{original_name}'";
+                dB_Connect.SQLQuery(sqlQuery);
+
+                // DB의 가격 변경
+                sqlQuery = $"UPDATE Items SET Price='{textBox3.Text}' WHERE Price='{original_price}'";
                 dB_Connect.SQLQuery(sqlQuery);
 
                 dB_Connect.Close();
