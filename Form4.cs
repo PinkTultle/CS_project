@@ -32,6 +32,7 @@ namespace SMP_cs
         }
         private void Form4_Load(object sender, EventArgs e)
         {
+            
             dB_Connect = new DB_connect();
             dB_Connect.Open();
             string query = "select Name from Company;";
@@ -60,8 +61,7 @@ namespace SMP_cs
         //물품명을 받아오기때문에 해당 제품의 보유수량이 0인지 판별 후 동작필요
         private void button1_Click(object sender, EventArgs e)
         {
-
-
+            dB_Connect = new DB_connect();
             dB_Connect.Open();
             if ( (tg_Count - int.Parse(textBox3.Text)) < 0)
             {
@@ -69,7 +69,7 @@ namespace SMP_cs
             }
             else
             {
-                dB_Connect.ProceDureSQLQuey("itemhistory",textBox2.Text,textBox1.Text,textBox3.Text,"출고");
+                dB_Connect.ProceDureSQLQuey("itemhistory",comboBox1.Text,textBox1.Text,textBox3.Text,"출고");
                 dB_Connect.Close();
                 this.Close();
             }
