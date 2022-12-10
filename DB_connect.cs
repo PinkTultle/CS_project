@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Org.BouncyCastle.Asn1.X509;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Org.BouncyCastle.Crypto.Modes.Gcm;
+using System.Xml;
 
 namespace SMP_cs
 {
@@ -86,6 +87,37 @@ namespace SMP_cs
             catch ( Exception ex)
             {
                 MessageBox.Show($"{ex}");
+                return null;
+            }
+        }
+        public DataTable readSQL(string query)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                DataTable table = new DataTable();
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter(query, conn);
+                sqlDataAdapter.Fill(table);
+                return table;
+
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        public DataSet GetData(string query)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter(query, conn);
+                sqlDataAdapter.Fill(ds);
+                return ds;
+            }
+            catch (Exception e)
+            {
                 return null;
             }
         }
