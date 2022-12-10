@@ -30,7 +30,11 @@ namespace SMP_cs
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
+<<<<<<< HEAD
 
+=======
+            dB_Connect.Close();
+>>>>>>> 7a19e9d6e22ca24e513055423903021a855eae73
         }
 
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
@@ -124,7 +128,7 @@ namespace SMP_cs
                 // DataGridView에 dt 출력  
                 dataGridView1.DataSource = dt;
 
-                dB_Connect.conn.Close();
+
             }
             catch (Exception ex)
             {
@@ -159,7 +163,8 @@ namespace SMP_cs
 
         private void button4_Click(object sender, EventArgs e) // 그래프 버튼
         {
-
+            Form6 form6 = new Form6();
+            form6.ShowDialog();
         }
 
         // 현재 시각 타이머
