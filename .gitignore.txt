@@ -1,0 +1,7 @@
+Debug/
+.vs/
+Release/
+**/Debug/
+**/Release/
+**/x64/
+x64/
