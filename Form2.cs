@@ -21,17 +21,19 @@ namespace SMP_cs
         DB_connect dB_Connect;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
         DataTable dt = new DataTable();
+        Form3 frm2;
 
         public Form2()
         {
             InitializeComponent();
             this.MaximizeBox = false; // 전체화면 비활성화
         }
-
-        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        public Form2(Form3 _form)
         {
-
+            InitializeComponent();
+            frm2 = _form;
         }
+
 
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
         {
@@ -124,7 +126,6 @@ namespace SMP_cs
                 // DataGridView에 dt 출력  
                 dataGridView1.DataSource = dt;
 
-                dB_Connect.conn.Close();
             }
             catch (Exception ex)
             {
@@ -169,6 +170,24 @@ namespace SMP_cs
         {
             label4.Text = DateTime.Now.ToLongDateString(); // 날짜
             label2.Text = DateTime.Now.ToLongTimeString(); // 시간
+        }
+
+        public void Update_DB()
+        {
+            /*
+            dataGridView1.Columns.Clear(); 
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+            */
+
+            dataGridView1.Refresh();
+            dataGridView1.Update();
+
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dB_Connect.Close();
         }
     }
 }
