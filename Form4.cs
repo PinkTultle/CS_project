@@ -69,6 +69,7 @@ namespace SMP_cs
             {
                 dB_Connect.ProceDureSQLQuey("itemhistory",comboBox1.Text,textBox1.Text,textBox3.Text,"출고");
                 dB_Connect.Close();
+                MessageBox.Show($"{textBox1.Text}을(를) {comboBox1.Text}에게 {textBox3.Text}개를 출고하였습니다.");
                 this.Close();
             }
         }
