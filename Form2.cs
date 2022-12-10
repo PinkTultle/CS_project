@@ -21,6 +21,9 @@ namespace SMP_cs
         DB_connect dB_Connect;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
         DataTable dt = new DataTable();
+        MySqlDataAdapter myDataAdapter;
+        MySqlCommandBuilder cb;
+        DataSet ds;
 
         public Form2()
         {
@@ -28,10 +31,6 @@ namespace SMP_cs
             this.MaximizeBox = false; // 전체화면 비활성화
         }
 
-        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
         {
@@ -92,18 +91,18 @@ namespace SMP_cs
         {
             try
             {
-                MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
+                myDataAdapter = new MySqlDataAdapter();
                 myDataAdapter.SelectCommand = new MySqlCommand(sqlQuery, dB_Connect.conn);
-                MySqlCommandBuilder cb = new MySqlCommandBuilder(myDataAdapter);
-                DataSet ds = new DataSet();
+                cb = new MySqlCommandBuilder(myDataAdapter);
+                ds = new DataSet();
 
                 myDataAdapter.Fill(dt);
 
                 // DataTable 열 이름 변경
-                dt.Columns[0].ColumnName = "제품코드";
-                dt.Columns[1].ColumnName = "제품명";
-                dt.Columns[2].ColumnName = "가격";
-                dt.Columns[3].ColumnName = "수량";
+                dt.Columns["ItemID"].ColumnName = "제품코드";
+                dt.Columns["Name"].ColumnName = "제품명";
+                dt.Columns["Price"].ColumnName = "가격";
+                dt.Columns["Count"].ColumnName = "수량";
 
                 // DataGridView 열 색상 변경
                 dataGridView1.EnableHeadersVisualStyles = false;
@@ -124,7 +123,7 @@ namespace SMP_cs
                 // DataGridView에 dt 출력  
                 dataGridView1.DataSource = dt;
 
-                dB_Connect.conn.Close();
+                dB_Connect.Close();
             }
             catch (Exception ex)
             {
@@ -143,7 +142,7 @@ namespace SMP_cs
         }
         private void button5_Click(object sender, EventArgs e) // 물품 등록 버튼
         {
-            Form3 form3 = new Form3();
+            Form3 form3 = new Form3(this);
             form3.ShowDialog();
         }
         private void button7_Click(object sender, EventArgs e) // 물품 입고 버튼
@@ -182,6 +181,63 @@ namespace SMP_cs
         {
             label4.Text = DateTime.Now.ToLongDateString(); // 날짜
             label2.Text = DateTime.Now.ToLongTimeString(); // 시간
+        }
+
+        public void Update_DB()
+        {
+            dB_Connect.Open();
+            sqlQuery = $"SELECT * FROM `Items` ORDER BY `Count` ASC";
+
+            MySqlCommand cd= new MySqlCommand(sqlQuery, dB_Connect.conn);
+
+            try
+            {
+                dt.Clear();
+                dt.Columns.Clear();
+
+                myDataAdapter.SelectCommand = cd;
+                myDataAdapter.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+                myDataAdapter.Update(dt);
+                
+                //데이터 그리드뷰 컴럼명을 매핑
+                dt.Columns["ItemID"].ColumnName = "제품코드";
+                dt.Columns["Name"].ColumnName = "제품명";
+                dt.Columns["Price"].ColumnName = "가격";
+                dt.Columns["Count"].ColumnName = "수량";
+
+
+                // DataGridView 열 색상 변경
+                dataGridView1.EnableHeadersVisualStyles = false;
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Lavender;
+
+                // 중복 선택 불가
+                dataGridView1.MultiSelect = false;
+
+                // 행 단위로 클릭
+                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                // DataGridView 첫 번째 열 출력하지 않기 
+                dataGridView1.RowHeadersVisible = false;
+
+                // 목록과 DataGridView 크기 맞추기
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                // DataGridView에 dt 출력  
+                dataGridView1.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dB_Connect.Close();
         }
     }
 }

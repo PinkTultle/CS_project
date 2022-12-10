@@ -16,11 +16,15 @@ namespace SMP_cs
         string sqlQuery = "";
         DB_connect dB_Connect;
         DataTable dB_dt;
-        public Form3()
+        Form2 frm2;
+
+        public Form3(Form2 frm2)
         {
             InitializeComponent();
             this.MaximizeBox = false; // 전체화면 비활성화
+            this.frm2 = frm2;
         }
+
 
         private void button1_Click(object sender, EventArgs e) // 등록 버튼
         {
@@ -41,11 +45,19 @@ namespace SMP_cs
             {
                 MessageBox.Show("기존에 존재하는 물품 입니다!\n해당 제품은 제품 정보 변경 기능을 이용하세요!", "알림창", MessageBoxButtons.OK);
             }
-            
+
+
+            frm2.Update_DB();
+
             dB_Connect.Close();
             this.Close();
 
             // 텍스트 박스에 담긴 값 DB로 전송
+
+        }
+
+        private void Form3_FormClosed(object sender, FormClosedEventArgs e)
+        {
 
         }
     }

@@ -55,6 +55,14 @@
             this.textBox3.Size = new System.Drawing.Size(138, 21);
             this.textBox3.TabIndex = 18;
             // 
+            // textBox2
+            // 
+            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.textBox2.Location = new System.Drawing.Point(131, 125);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(138, 21);
+            this.textBox2.TabIndex = 17;
+
             // textBox1
             // 
             this.textBox1.Enabled = false;
@@ -113,6 +121,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 314);
+
+
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
