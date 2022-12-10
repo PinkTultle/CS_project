@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-=======
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> master
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,12 +138,12 @@
             this.button5.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("함초롬바탕", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(669, 231);
+            this.button5.Location = new System.Drawing.Point(669, 151);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(163, 55);
             this.button5.TabIndex = 8;
-            this.button5.Text = "물품 입고";
+            this.button5.Text = "물품 등록";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -154,36 +151,20 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-<<<<<<< HEAD
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Aqua;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkKhaki;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.GridColor = System.Drawing.Color.Chartreuse;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 121);
-=======
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(38, 151);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
->>>>>>> master
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -200,27 +181,17 @@
             // 
             // button6
             // 
-<<<<<<< HEAD
-            this.button6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.button6.Location = new System.Drawing.Point(585, 121);
-=======
             this.button6.BackColor = System.Drawing.Color.Lavender;
             this.button6.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("함초롬바탕", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button6.Font = new System.Drawing.Font("함초롬바탕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(669, 151);
+            this.button6.Location = new System.Drawing.Point(503, 109);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
->>>>>>> master
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(163, 55);
+            this.button6.Size = new System.Drawing.Size(110, 34);
             this.button6.TabIndex = 10;
-<<<<<<< HEAD
             this.button6.Text = "정보 수정";
-=======
-            this.button6.Text = "물품 정보 수정";
->>>>>>> master
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -239,29 +210,33 @@
             // 
             // label2
             // 
-<<<<<<< HEAD
-            this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(586, 54);
-=======
             this.label2.Location = new System.Drawing.Point(670, 69);
->>>>>>> master
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(162, 29);
             this.label2.TabIndex = 14;
             this.label2.Text = "시간";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Lavender;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("함초롬바탕", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button7.Location = new System.Drawing.Point(669, 225);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(163, 55);
+            this.button7.TabIndex = 15;
+            this.button7.Text = "물품 입고";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(784, 461);
-=======
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(896, 575);
->>>>>>> master
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button6);
@@ -274,15 +249,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
-<<<<<<< HEAD
-            this.ForeColor = System.Drawing.Color.DarkKhaki;
-=======
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
->>>>>>> master
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "재고 관리 프로그램(메인 화면)";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -306,5 +276,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button7;
     }
 }
