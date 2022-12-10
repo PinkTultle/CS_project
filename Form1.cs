@@ -19,7 +19,7 @@ namespace SMP_cs
             
         }
 
-        private void Form1_Click(object sender, EventArgs e)
+        private void Form1_Click(object sender, EventArgs e) // 화면 클릭 경우
         {
             this.Hide(); // 로고 화면 숨김
             this.Close(); // 로고 화면 종료
@@ -30,6 +30,12 @@ namespace SMP_cs
         {
             Form2 form2 = new Form2();
             form2.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e) // 사진 클릭 경우
+        {
+            this.Hide(); // 로고 화면 숨김
+            this.Close(); // 로고 화면 종료
         }
     }
 }

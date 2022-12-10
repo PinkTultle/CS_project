@@ -1,10 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +17,7 @@ namespace SMP_cs
 {
     public partial class Form2 : Form
     {
+
         DB_connect dB_Connect;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
         DataTable dt = new DataTable();
@@ -51,29 +54,18 @@ namespace SMP_cs
                 {
                     newDt.DefaultView.RowFilter = String.Format("제품명 = '{0}'", searchValue);
                     dataGridView1.DataSource = newDt;
-
                 }
                 else // 콤보박스 [제품코드]
                 {
                     newDt.DefaultView.RowFilter = String.Format("제품코드 = '{0}'", searchValue);
                     dataGridView1.DataSource = newDt;
                 }
-
-
             }
             else // 빈값을 검색할 경우
             {
-                /*
-                dataGridView1.DataSource = null;
-                dataGridView1.Refresh();
-                dataGridView1.DataSource = dt;
-                */
-
-                newDt.DefaultView.RowFilter = String.Format("");
+                newDt.DefaultView.RowFilter = String.Format(""); // 필터링 설정되어있던 것 해제
                 dataGridView1.DataSource = newDt;
-
             }
-            
         }
         
         private void Form2_Load(object sender, EventArgs e)
@@ -152,7 +144,10 @@ namespace SMP_cs
 
         private void button2_Click(object sender, EventArgs e) // 물품출고 버튼
         {
-            Form4 form4 = new Form4("gksk",5);  //그리드뷰 선택 이름과 수량 기입필요
+            DataGridViewRow selecRow = dataGridView1.SelectedRows[0];
+            string itemName = selecRow.Cells[1].Value.ToString();
+            int itemCount = int.Parse(selecRow.Cells[3].Value.ToString());
+            Form4 form4 = new Form4($"{itemName}" , itemCount);  //그리드뷰 선택 이름과 수량 기입필요
             form4.ShowDialog();
         }
 
@@ -162,10 +157,10 @@ namespace SMP_cs
             form5.ShowDialog();
         }
 
-
         private void button4_Click(object sender, EventArgs e) // 그래프 버튼
         {
-
+            Form6 form6 = new Form6();
+            form6.ShowDialog();
         }
 
         // 현재 시각 타이머
