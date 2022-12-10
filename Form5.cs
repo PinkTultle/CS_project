@@ -12,6 +12,7 @@ namespace SMP_cs
 {
     public partial class Form5 : Form
     {
+        DB_connect dB_Connect = new DB_connect();
         public Form5()
         {
             InitializeComponent();
@@ -24,6 +25,32 @@ namespace SMP_cs
             string[] comboData = { "입고", "출고" };
             comboBox1.Items.AddRange(comboData);
             comboBox1.SelectedIndex = 0; // 첫 번째 값 디폴트 선택
+            dB_Connect.Open();
+            LoadList("입고");
+        }
+        public void LoadList(string record)
+        {
+            try
+            {
+
+                string query = $"select SalesRecord.ItemID,Items.Name,Company.Name,SalesRecord.Count,toDate,Record from SalesRecord,Items,Company " +
+                    $"where Items.ItemID = SalesRecord.ItemID and Company.CompanyID = SalesRecord.CompanyID " +
+                    $"and SalesRecord.Record = '{record}';";
+                DataTable table = dB_Connect.readSQL(query);
+                dataGridView1.DataSource = table;
+                dB_Connect.Close();
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show(e.Message);
+            }
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string s = comboBox1.Text.ToString();
+            LoadList(s);
         }
     }
 }

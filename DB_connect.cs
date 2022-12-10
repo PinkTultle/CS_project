@@ -89,6 +89,23 @@ namespace SMP_cs
                 return null;
             }
         }
+        public DataTable readSQL(string query)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                DataTable table = new DataTable();
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter(query, conn);
+                sqlDataAdapter.Fill(table);
+                return table;
+
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
         public void ProceDureSQLQuey(string query,string s1, string s2, string s3, string s4)
         {
             try
