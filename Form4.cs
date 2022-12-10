@@ -54,8 +54,6 @@ namespace SMP_cs
             {
                 MessageBox.Show(q.Message);
             }
-
-
         }
 
         //물품명을 받아오기때문에 해당 제품의 보유수량이 0인지 판별 후 동작필요

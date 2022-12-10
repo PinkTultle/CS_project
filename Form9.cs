@@ -43,5 +43,17 @@ namespace SMP_cs
         {
             textBox1.Text = trackBar1.Value.ToString();
         }
+
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (textBox1.Text != "")
+                    trackBar1.Value = int.Parse(textBox1.Text);
+                else
+                    MessageBox.Show("값을 입력 후 Enter키 입력 바람");
+            }
+        }
     }
 }
