@@ -41,7 +41,6 @@ namespace SMP_cs
             if( (tg_Count - int.Parse(textBox3.Text)) < 0)
             {
                 MessageBox.Show("보유 수량보다 많은 값을 입력했습니다!");
-
             }
             else
             {
@@ -49,8 +48,6 @@ namespace SMP_cs
                 dB_Connect.Close();
                 this.Close();
             }
-
-            
         }
     }
 }
