@@ -146,6 +146,14 @@ namespace SMP_cs
             Form3 form3 = new Form3();
             form3.ShowDialog();
         }
+        private void button7_Click(object sender, EventArgs e) // 물품 입고 버튼
+        {
+            DataGridViewRow selecRow = dataGridView1.SelectedRows[0];
+            string itemName = selecRow.Cells[1].Value.ToString();
+            int itemCount = int.Parse(selecRow.Cells[3].Value.ToString());
+            Form9 form9 = new Form9(itemName, itemCount);
+            form9.ShowDialog();
+        }
 
         private void button2_Click(object sender, EventArgs e) // 물품출고 버튼
         {
