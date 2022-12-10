@@ -30,7 +30,7 @@ namespace SMP_cs
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            dB_Connect.Close();
         }
 
         private void button1_Click(object sender, EventArgs e) // 검색 버튼
@@ -124,7 +124,7 @@ namespace SMP_cs
                 // DataGridView에 dt 출력  
                 dataGridView1.DataSource = dt;
 
-                dB_Connect.conn.Close();
+
             }
             catch (Exception ex)
             {

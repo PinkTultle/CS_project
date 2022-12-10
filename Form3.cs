@@ -41,7 +41,7 @@ namespace SMP_cs
             {
                 MessageBox.Show("기존에 존재하는 물품 입니다!\n해당 제품은 제품 정보 변경 기능을 이용하세요!", "알림창", MessageBoxButtons.OK);
             }
-            
+
             dB_Connect.Close();
             this.Close();
 

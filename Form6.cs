@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+﻿using System;
+=======
 ﻿using MySql.Data.MySqlClient;
 using System;
+>>>>>>> master
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,21 +12,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< HEAD
+=======
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Threading;
+>>>>>>> master
 
 namespace SMP_cs
 {
     public partial class Form6 : Form
     {
+<<<<<<< HEAD
+=======
         DB_connect dB_Connect;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
         DataTable dt = new DataTable();
 
+>>>>>>> master
         public Form6()
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
+    }
+}
+=======
 
 
 
@@ -99,3 +113,4 @@ namespace SMP_cs
     }
 
 }
+>>>>>>> master
