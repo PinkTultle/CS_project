@@ -97,21 +97,12 @@ namespace SMP_cs
                 ds = new DataSet();
 
                 myDataAdapter.Fill(dt);
-                
-                // DataTable 열 이름 변경
-                dt.Columns[0].ColumnName = "제품코드";
-                dt.Columns[1].ColumnName = "제품명";
-                dt.Columns[2].ColumnName = "가격";
-                dt.Columns[3].ColumnName = "수량";
-                
-                /*
-                //데이터 그리드뷰 컴럼명을 매핑
-                dataGridView1.Columns["ItemID"].HeaderText = "제품코드";
-                dataGridView1.Columns["Name"].HeaderText = "제품명";
-                dataGridView1.Columns["Price"].HeaderText = "가격";
-                dataGridView1.Columns["Count"].HeaderText = "수량";
-                */
 
+                // DataTable 열 이름 변경
+                dt.Columns["ItemID"].ColumnName = "제품코드";
+                dt.Columns["Name"].ColumnName = "제품명";
+                dt.Columns["Price"].ColumnName = "가격";
+                dt.Columns["Count"].ColumnName = "수량";
 
                 // DataGridView 열 색상 변경
                 dataGridView1.EnableHeadersVisualStyles = false;
@@ -189,29 +180,19 @@ namespace SMP_cs
             try
             {
                 dt.Clear();
+                dt.Columns.Clear();
+
                 myDataAdapter.SelectCommand = cd;
                 myDataAdapter.Fill(dt);
-                BindingSource Bsous = new BindingSource();
 
-                Bsous.DataSource = dt;
-                dataGridView1.DataSource = Bsous;
+                dataGridView1.DataSource = dt;
                 myDataAdapter.Update(dt);
-
                 
-                // DataTable 열 이름 변경
-                dt.Columns[0].ColumnName = "제품코드";
-                dt.Columns[1].ColumnName = "제품명";
-                dt.Columns[2].ColumnName = "가격";
-                dt.Columns[3].ColumnName = "수량";
-                
-
-                /*
                 //데이터 그리드뷰 컴럼명을 매핑
-                dataGridView1.Columns["ItemID"].HeaderText = "제품코드";
-                dataGridView1.Columns["Name"].HeaderText = "제품명";
-                dataGridView1.Columns["Price"].HeaderText = "가격";
-                dataGridView1.Columns["Count"].HeaderText = "수량";
-                */
+                dt.Columns["ItemID"].ColumnName = "제품코드";
+                dt.Columns["Name"].ColumnName = "제품명";
+                dt.Columns["Price"].ColumnName = "가격";
+                dt.Columns["Count"].ColumnName = "수량";
 
 
                 // DataGridView 열 색상 변경
