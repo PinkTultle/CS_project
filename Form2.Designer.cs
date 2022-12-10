@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -146,10 +144,12 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
- 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(33, 121);
             this.dataGridView1.MultiSelect = false;
@@ -158,6 +158,7 @@
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(503, 295);
             this.dataGridView1.TabIndex = 9;

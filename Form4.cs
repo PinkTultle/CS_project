@@ -20,15 +20,19 @@ namespace SMP_cs
         DB_connect dB_Connect;
         string tg_item;
         int tg_Count;
+        //데이터 그리드뷰 새로고침위해 필요
+        //폼2의 새로고침 매서드 실행위해 필요
+        Form2 frm2;
 
 
         //물품 출고시 데이터 그리드뷰에 선택된 값을 자동으로 인식하여 물품 명에 제품이름 출력
-        public Form4(string target_item, int Count)
+        public Form4(string target_item, int Count, Form2 form2)
         {
             InitializeComponent();
             this.MaximizeBox = false;
             tg_item = textBox1.Text = target_item;
             tg_Count = Count;
+            this.frm2 = form2;
         }
         private void Form4_Load(object sender, EventArgs e)
         {
@@ -70,6 +74,11 @@ namespace SMP_cs
                 dB_Connect.ProceDureSQLQuey("itemhistory",comboBox1.Text,textBox1.Text,textBox3.Text,"출고");
                 dB_Connect.Close();
                 MessageBox.Show($"{textBox1.Text}을(를) {comboBox1.Text}에게 {textBox3.Text}개를 출고하였습니다.");
+
+
+
+                frm2.Update_DB();
+
                 this.Close();
             }
         }
