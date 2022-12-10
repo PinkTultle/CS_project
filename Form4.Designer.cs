@@ -54,7 +54,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(138, 21);
             this.textBox3.TabIndex = 18;
-
             //
             // textBox1
             // 
