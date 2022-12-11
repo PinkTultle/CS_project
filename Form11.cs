@@ -47,6 +47,7 @@ namespace SMP_cs
             }
             finally
             {
+                frm10.Update_DB();
                 dB_Connect.Close();
                 this.Close();
             }

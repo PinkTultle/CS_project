@@ -31,7 +31,7 @@ namespace SMP_cs
             dB_Connect = new DB_connect();
             dB_Connect.Open();
 
-            sqlQuery = "SELECT * FROM `Company` ORDER BY `Name` DESC";
+            sqlQuery = "SELECT * FROM `Company` ORDER BY `CompanyID` ASC";
 
             try
             {
@@ -78,7 +78,7 @@ namespace SMP_cs
             dB_Connect = new DB_connect();
             dB_Connect.Open();
 
-            sqlQuery = "SELECT * FROM `Company` ORDER BY `Name` DESC";
+            sqlQuery = "SELECT * FROM `Company` ORDER BY `CompanyID` ASC";
 
             try
             {
