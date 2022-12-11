@@ -17,11 +17,13 @@ namespace SMP_cs
         DB_connect dB_Connect;
         DataTable table;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
+        Form4 frm4;
 
-        public Form10()
+        public Form10(Form4 form4)
         {
             InitializeComponent();
             this.MaximizeBox = false;
+            frm4 = form4;
         }
 
         private void Form10_Load(object sender, EventArgs e)
@@ -116,10 +118,15 @@ namespace SMP_cs
                 MessageBox.Show(ex.Message);
             }
 
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+            string Chan_val = row.Cells[1].Value.ToString();
 
-
-
+            frm4.change_textBox2(Chan_val);
+            this.Close();
         }
     }
 }
