@@ -12,7 +12,8 @@ namespace SMP_cs
 {
     public partial class Form5 : Form
     {
-        DB_connect dB_Connect = new DB_connect();
+        DB_connect dB_Connect;
+        string today;
         public Form5()
         {
             InitializeComponent();
@@ -25,24 +26,29 @@ namespace SMP_cs
             string[] comboData = { "입고", "출고" };
             comboBox1.Items.AddRange(comboData);
             comboBox1.SelectedIndex = 0; // 첫 번째 값 디폴트 선택
+            dB_Connect = new DB_connect();
+            today = dateTimePicker1.Text;
             LoadList("입고");
         }
         public void LoadList(string record)
         {
+            
             dB_Connect.Open();
             string query;
             if(record == "입고")
             {
                 query = "select SalesRecord.ItemID,Items.Name,Company.Name,SalesRecord.Count,toDate,Record from SalesRecord,Items,Company " +
-                    "where Items.ItemID = SalesRecord.ItemID  " +
-                    "and SalesRecord.Record = '입고'" +
-                    "group by Items.Name;";
+                    "where Items.ItemID = SalesRecord.ItemID " +
+                    $"and SalesRecord.Record = '입고' " +
+                    $"and DATE_FORMAT(toDate, '%Y-%m-%d') = DATE_FORMAT('{today}','%Y-%m-%d')" +
+                    " group by Items.Name;";
             }
             else
             {
                 query = $"select SalesRecord.ItemID,Items.Name,Company.Name,SalesRecord.Count,toDate,Record from SalesRecord,Items,Company " +
                     $"where Items.ItemID = SalesRecord.ItemID and Company.CompanyID = SalesRecord.CompanyID " +
-                    $"and SalesRecord.Record = '{record}';";
+                    $"and DATE_FORMAT(toDate, '%Y-%m-%d')=DATE_FORMAT('{today}','%Y-%m-%d')" +
+                    $"and SalesRecord.Record = '출고';";
             }
             try
             {
@@ -54,7 +60,6 @@ namespace SMP_cs
                 table.Columns[4].ColumnName = "판매날짜";
                 table.Columns[5].ColumnName = "판매내역";
 
-                //dataGridView1.Columns["toDate"].Width = 700;
 
                 // DataGridView 열 색상 변경
                 dataGridView1.EnableHeadersVisualStyles = false;
@@ -74,8 +79,7 @@ namespace SMP_cs
 
                 // DataGridView에 dt 출력  
                 dataGridView1.DataSource = table;
-                dataGridView1.Columns[4].FillWeight = 150;
-
+                
                 dB_Connect.Close();
             }
             catch (Exception e)
@@ -85,13 +89,15 @@ namespace SMP_cs
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            string s = comboBox1.Text.ToString();
-            LoadList(s);
+            LoadList(comboBox1.Text.ToString());
         }
 
-
-
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            today = dateTimePicker1.Text;
+        }
     }
 }
