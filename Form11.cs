@@ -14,10 +14,12 @@ namespace SMP_cs
     {
         DB_connect dB_Connect;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
-        public Form11()
+        Form10 frm10;
+        public Form11(Form10 form10)
         {
             InitializeComponent();
             this.MaximizeBox = false;
+            frm10 = form10;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace SMP_cs
 
             //sqlQuery = "SELECT * FROM `Company`";
             //(CompanyID, Name, PhoneNumber) -> Company 테이블 컬럼
-            sqlQuery = $"INSERT INTO Company values ({textBox1.Text}, {textBox2.Text}, {textBox3.Text});";
+            sqlQuery = $"INSERT INTO Company values ( '{textBox1.Text}', '{textBox2.Text}', '{textBox3.Text}');";
             try
             {
                 dB_Connect.SQLQuery(sqlQuery);
@@ -48,6 +50,13 @@ namespace SMP_cs
                 dB_Connect.Close();
                 this.Close();
             }
+
+        }
+
+        private void Form11_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frm10.Update();
+
 
         }
     }
