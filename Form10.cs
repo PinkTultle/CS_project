@@ -104,6 +104,7 @@ namespace SMP_cs
 
                 // 목록과 DataGridView 크기 맞추기
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                
 
                 dB_Connect.Close();
             }
