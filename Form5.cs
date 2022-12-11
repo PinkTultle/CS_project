@@ -13,7 +13,7 @@ namespace SMP_cs
     public partial class Form5 : Form
     {
         DB_connect dB_Connect;
-        string today;
+        string []today = { "",""};
         public Form5()
         {
             InitializeComponent();
@@ -27,7 +27,8 @@ namespace SMP_cs
             comboBox1.Items.AddRange(comboData);
             comboBox1.SelectedIndex = 0; // 첫 번째 값 디폴트 선택
             dB_Connect = new DB_connect();
-            today = dateTimePicker1.Text;
+            today[0] = dateTimePicker1.Text;
+            today[1] = dateTimePicker2.Text;
             LoadList("입고");
         }
         public void LoadList(string record)
@@ -40,15 +41,15 @@ namespace SMP_cs
                 query = "select SalesRecord.ItemID,Items.Name,Company.Name,SalesRecord.Count,toDate,Record from SalesRecord,Items,Company " +
                     "where Items.ItemID = SalesRecord.ItemID " +
                     $"and SalesRecord.Record = '입고' " +
-                    $"and DATE_FORMAT(toDate, '%Y-%m-%d') = DATE_FORMAT('{today}','%Y-%m-%d')" +
-                    " group by Items.Name;";
+                    $"and DATE_FORMAT(toDate, '%Y-%m-%d') between DATE_FORMAT('{today[0]}','%Y-%m-%d') and DATE_FORMAT('{today[1]}','%Y-%m-%d')" +
+                    " group by Items.Name order by toDate  asc;";
             }
             else
             {
                 query = $"select SalesRecord.ItemID,Items.Name,Company.Name,SalesRecord.Count,toDate,Record from SalesRecord,Items,Company " +
                     $"where Items.ItemID = SalesRecord.ItemID and Company.CompanyID = SalesRecord.CompanyID " +
-                    $"and DATE_FORMAT(toDate, '%Y-%m-%d')=DATE_FORMAT('{today}','%Y-%m-%d')" +
-                    $"and SalesRecord.Record = '출고';";
+                    $"and DATE_FORMAT(toDate, '%Y-%m-%d') between DATE_FORMAT('{today[0]}','%Y-%m-%d') and DATE_FORMAT('{today[1]}','%Y-%m-%d')" +
+                    $"and SalesRecord.Record = '출고' order by toDate  asc;";
             }
             try
             {
@@ -97,7 +98,8 @@ namespace SMP_cs
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            today = dateTimePicker1.Text;
+            today[0] = dateTimePicker1.Text;
+            today[1] = dateTimePicker2.Text;
         }
     }
 }
