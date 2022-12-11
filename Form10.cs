@@ -75,20 +75,14 @@ namespace SMP_cs
 
         public void Update_DB()
         {
+            dB_Connect = new DB_connect();
             dB_Connect.Open();
-            sqlQuery = "SELECT * FROM `Company` ORDER BY `Name` DESC";
 
-            MySqlCommand cd = new MySqlCommand(sqlQuery, dB_Connect.conn);
+            sqlQuery = "SELECT * FROM `Company` ORDER BY `Name` DESC";
 
             try
             {
-                table.Clear();
-                table.Columns.Clear();
-
-
-                sqlQuery = "SELECT * FROM `Company` ORDER BY `Name` DESC";
                 table = dB_Connect.readSQL(sqlQuery);
-
                 table.Columns[0].ColumnName = "회사ID";
                 table.Columns[1].ColumnName = "회사명";
                 table.Columns[2].ColumnName = "회사번호";
@@ -113,7 +107,7 @@ namespace SMP_cs
 
                 dB_Connect.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -121,6 +115,15 @@ namespace SMP_cs
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.SelectedRows[0];
+            string Chan_val = row.Cells[1].Value.ToString();
+
+            frm4.change_textBox2(Chan_val);
+            this.Close();
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewRow row = dataGridView1.SelectedRows[0];
             string Chan_val = row.Cells[1].Value.ToString();
