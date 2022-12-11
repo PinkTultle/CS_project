@@ -54,6 +54,8 @@ namespace SMP_cs
                 table.Columns[4].ColumnName = "판매날짜";
                 table.Columns[5].ColumnName = "판매내역";
 
+                //dataGridView1.Columns["toDate"].Width = 700;
+
                 // DataGridView 열 색상 변경
                 dataGridView1.EnableHeadersVisualStyles = false;
                 dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Lavender;
@@ -67,7 +69,7 @@ namespace SMP_cs
                 // DataGridView 첫 번째 열 출력하지 않기 
                 dataGridView1.RowHeadersVisible = false;
 
-                // 목록과 DataGridView 크기 맞추기
+                // 목록과 DataGridView 크기 맞추기 
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 // DataGridView에 dt 출력  
@@ -86,5 +88,8 @@ namespace SMP_cs
             string s = comboBox1.Text.ToString();
             LoadList(s);
         }
+
+
+
     }
 }
