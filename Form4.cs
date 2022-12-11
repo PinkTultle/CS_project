@@ -66,24 +66,35 @@ namespace SMP_cs
         {
             dB_Connect = new DB_connect();
             dB_Connect.Open();
-            if ( (tg_Count - int.Parse(textBox3.Text)) < 0)
+
+            if(textBox3.Text == "") // 수량을 빈칸으로 비워두는 경우
             {
-                MessageBox.Show("보유 수량보다 많은 값을 입력했습니다!");
+                MessageBox.Show("출고할 수량을 정확하게 입력해주세요.");
             }
             else
             {
-                dB_Connect.ProceDureSQLQuey("itemhistory",comboBox1.Text,textBox1.Text,textBox3.Text,"출고");
-                dB_Connect.Close();
-                MessageBox.Show($"{textBox1.Text}을(를) {comboBox1.Text}에게 {textBox3.Text}개를 출고하였습니다.");
+                if ((tg_Count - int.Parse(textBox3.Text)) < 0)
+                {
+                    MessageBox.Show("보유 수량보다 많은 값을 입력했습니다!");
+                }
+                else
+                {
+                    dB_Connect.ProceDureSQLQuey("itemhistory", comboBox1.Text, textBox1.Text, textBox3.Text, "출고");
+                    dB_Connect.Close();
+                    MessageBox.Show($"{textBox1.Text}을(를) {comboBox1.Text}에게 {textBox3.Text}개를 출고하였습니다.");
 
+                    frm2.Update_DB();
 
-
-                frm2.Update_DB();
-
-                this.Close();
+                    this.Close();
+                }
             }
+            
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form10 form10 = new Form10();
+            form10.ShowDialog();
+        }
     }
 }
