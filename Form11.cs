@@ -35,7 +35,7 @@ namespace SMP_cs
             dB_Connect.SQLQuery(sqlQuery);
 
             dB_Connect.Close();
-
+            
         }
     }
 }
