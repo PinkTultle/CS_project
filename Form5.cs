@@ -54,7 +54,6 @@ namespace SMP_cs
                 table.Columns[4].ColumnName = "판매날짜";
                 table.Columns[5].ColumnName = "판매내역";
 
-                //dataGridView1.Columns["toDate"].Width = 700;
 
                 // DataGridView 열 색상 변경
                 dataGridView1.EnableHeadersVisualStyles = false;
