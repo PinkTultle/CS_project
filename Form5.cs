@@ -80,16 +80,15 @@ namespace SMP_cs
 
                 // DataGridView에 dt 출력  
                 dataGridView1.DataSource = table;
-                
+                dataGridView1.Columns[4].FillWeight = 150;
+
                 dB_Connect.Close();
             }
             catch (Exception e)
             {
                 //MessageBox.Show(e.Message);
             }
-
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
