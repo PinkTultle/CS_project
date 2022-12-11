@@ -41,14 +41,14 @@ namespace SMP_cs
                 query = "select SalesRecord.ItemID,Items.Name,Company.Name,SalesRecord.Count,toDate,Record from SalesRecord,Items,Company " +
                     "where Items.ItemID = SalesRecord.ItemID " +
                     $"and SalesRecord.Record = '입고' " +
-                    $"and DATE_FORMAT(toDate, '%Y-%m-%d') between DATE_FORMAT('{today[0]}','%Y-%m-%d') and DATE_FORMAT('{today[1]}','%Y-%m-%d')" +
+                    $"and DATE_FORMAT(toDate, '%Y-%m-%d') between '{today[0]}' and '{today[1]}'" +
                     " group by Items.Name order by toDate  asc;";
             }
             else
             {
                 query = $"select SalesRecord.ItemID,Items.Name,Company.Name,SalesRecord.Count,toDate,Record from SalesRecord,Items,Company " +
                     $"where Items.ItemID = SalesRecord.ItemID and Company.CompanyID = SalesRecord.CompanyID " +
-                    $"and DATE_FORMAT(toDate, '%Y-%m-%d') between DATE_FORMAT('{today[0]}','%Y-%m-%d') and DATE_FORMAT('{today[1]}','%Y-%m-%d')" +
+                    $"and DATE_FORMAT(toDate, '%Y-%m-%d') between '{today[0]}' and '{today[1]}'" +
                     $"and SalesRecord.Record = '출고' order by toDate  asc;";
             }
             try
