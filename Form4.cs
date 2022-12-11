@@ -52,6 +52,7 @@ namespace SMP_cs
                         comboBox1.Items.Add(row["Name"].ToString());
                     }
                 }
+                comboBox1.SelectedIndex = 0;
                 dB_Connect.Close();
             }
             catch(Exception q)
