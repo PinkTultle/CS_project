@@ -22,19 +22,32 @@ namespace SMP_cs
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string companyId = textBox1.Text; // 입력된 회사 ID
-            string companyName = textBox2.Text; // 입력된 회사명
-            string companyNum = textBox3.Text; // 입력된 회사번호
+            // 입력된 회사 ID => textBox1.Text 
+            // 입력된 회사명 => textBox2.Text 
+            // 입력된 회사번호 => textBox3.Text 
 
             dB_Connect = new DB_connect();
             dB_Connect.Open();
 
             //sqlQuery = "SELECT * FROM `Company`";
+            //(CompanyID, Name, PhoneNumber) -> Company 테이블 컬럼
+            sqlQuery = $"INSERT INTO Company values ({textBox1.Text}, {textBox2.Text}, {textBox3.Text});";
+            try
+            {
+                dB_Connect.SQLQuery(sqlQuery);
+                MessageBox.Show("회사 정보 저장!");
 
-            sqlQuery = $"INSERT INTO Company (CompanyID, Name, PhoneNumber) VALUES ({companyId}, {companyName}, {companyNum})";
-            dB_Connect.SQLQuery(sqlQuery);
-
-            dB_Connect.Close();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                dB_Connect.Close();
+                this.Close();
+            }
 
         }
     }
