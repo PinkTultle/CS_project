@@ -57,6 +57,7 @@ namespace SMP_cs
                 dB_Connect.SQLQuery(sqlQuery);
 
                 dB_Connect.Close();
+                
                 frm2.Update_DB();
 
                 this.Close();
@@ -90,14 +91,23 @@ namespace SMP_cs
             {
                 try
                 {
+                    sqlQuery = $"SET foreign_key_checks = 0;";
+                    dB_Connect.SQLQuery(sqlQuery);
+
                     sqlQuery = $"DELETE FROM Items WHERE Items.ItemID ='{tg_item}'";
                     dB_Connect.SQLQuery(sqlQuery);
 
-                    MessageBox.Show($"'{textBox1.Text}'가 삭제되었습니다.", "삭제 완료");
+                    sqlQuery = $"SET foreign_key_checks = 1;";
+                    dB_Connect.SQLQuery(sqlQuery);
+
+
+
+                    frm2.Update_DB();
+
+                    MessageBox.Show($"'{original_name}'가 삭제되었습니다.", "삭제 완료");
 
                     dB_Connect.Close();
 
-                    frm2.Update_DB();
 
                     this.Close();
                 }
