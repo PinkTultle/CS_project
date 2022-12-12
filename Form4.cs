@@ -34,7 +34,7 @@ namespace SMP_cs
             tg_Count = Count;
             this.frm2 = form2;
         }
-        private void Form4_Load(object sender, EventArgs e)
+        private void Form4_Load(object sender, EventArgs e) 
         {
             textBox2.Text = "선택하세요";
         }
@@ -84,7 +84,7 @@ namespace SMP_cs
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             // 수량의 경우 숫자가 아니면 입력 불가
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar  == Convert.ToChar(Keys.Back)))
             {
                 e.Handled = true;
             }
