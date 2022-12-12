@@ -31,7 +31,7 @@ namespace SMP_cs
             dB_Connect = new DB_connect();
             dB_Connect.Open();
 
-            sqlQuery = "SELECT * FROM `Company` ORDER BY `Name` DESC";
+            sqlQuery = "SELECT * FROM `Company` ORDER BY `CompanyID` ASC";
 
             try
             {
@@ -78,7 +78,7 @@ namespace SMP_cs
             dB_Connect = new DB_connect();
             dB_Connect.Open();
 
-            sqlQuery = "SELECT * FROM `Company` ORDER BY `Name` DESC";
+            sqlQuery = "SELECT * FROM `Company` ORDER BY `CompanyID` ASC";
 
             try
             {
@@ -104,6 +104,7 @@ namespace SMP_cs
 
                 // 목록과 DataGridView 크기 맞추기
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                
 
                 dB_Connect.Close();
             }
