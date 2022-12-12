@@ -34,31 +34,9 @@ namespace SMP_cs
             tg_Count = Count;
             this.frm2 = form2;
         }
-        private void Form4_Load(object sender, EventArgs e)
+        private void Form4_Load(object sender, EventArgs e) 
         {
-            
-            dB_Connect = new DB_connect();
-            dB_Connect.Open();
-            string query = "select Name from Company;";
-            try
-            {
-                DataSet dataset = dB_Connect.GetData(query);
-                DataTable datatable = dataset.Tables[0];
-                DataRowCollection datarow = datatable.Rows;
-                foreach (DataRow row in datarow)
-                {
-                    if (row["Name"] != null || row["Name"] != DBNull.Value)
-                    {
-                        comboBox1.Items.Add(row["Name"].ToString());
-                    }
-                }
-                comboBox1.SelectedIndex = 0;
-                dB_Connect.Close();
-            }
-            catch(Exception q)
-            {
-                MessageBox.Show(q.Message);
-            }
+            textBox2.Text = "선택하세요";
         }
 
         //물품명을 받아오기때문에 해당 제품의 보유수량이 0인지 판별 후 동작필요
@@ -79,9 +57,9 @@ namespace SMP_cs
                 }
                 else
                 {
-                    dB_Connect.ProceDureSQLQuey("itemhistory", comboBox1.Text, textBox1.Text, textBox3.Text, "출고");
+                    dB_Connect.ProceDureSQLQuey("itemhistory", textBox2.Text, textBox1.Text, textBox3.Text, "출고");
                     dB_Connect.Close();
-                    MessageBox.Show($"{textBox1.Text}을(를) {comboBox1.Text}에게 {textBox3.Text}개를 출고하였습니다.");
+                    MessageBox.Show($"{textBox1.Text}을(를) {textBox2.Text}에게 {textBox3.Text}개를 출고하였습니다.");
 
                     frm2.Update_DB();
 
@@ -93,8 +71,23 @@ namespace SMP_cs
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form10 form10 = new Form10();
+            Form10 form10 = new Form10(this);
             form10.ShowDialog();
+        }
+
+        public void change_textBox2(string val)
+        {
+            textBox2.Text = val;
+
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 수량의 경우 숫자가 아니면 입력 불가
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar  == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

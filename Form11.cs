@@ -15,6 +15,7 @@ namespace SMP_cs
         DB_connect dB_Connect;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
         Form10 frm10;
+        DataTable dt;
         public Form11(Form10 form10)
         {
             InitializeComponent();
@@ -31,33 +32,107 @@ namespace SMP_cs
             dB_Connect = new DB_connect();
             dB_Connect.Open();
 
-            //sqlQuery = "SELECT * FROM `Company`";
-            //(CompanyID, Name, PhoneNumber) -> Company 테이블 컬럼
-            sqlQuery = $"INSERT INTO Company values ( '{textBox1.Text}', '{textBox2.Text}', '{textBox3.Text}');";
-            try
-            {
-                dB_Connect.SQLQuery(sqlQuery);
-                MessageBox.Show("회사 정보 저장!");
+            string sqlQuery = "SELECT CompanyID,Name FROM Company;";
+            dt = dB_Connect.readSQL(sqlQuery);
 
+            string Check = $"{textBox1.Text}";
+            string Check2 = $"{textBox2.Text}";
+
+            bool contains = dt.AsEnumerable().Any(row => Check == row.Field<String>("CompanyID"));
+            bool contains2 = dt.AsEnumerable().Any(row => Check2 == row.Field<String>("Name"));
+
+            string companyNum = $"{comboBox1.Text}-{textBox4.Text}-{textBox3.Text}";
+
+
+            if (contains == true || contains2 == true)
+            {
+                if (contains2 == true)
+                {
+                    MessageBox.Show("같은 이름의 업체가 있습니다.\n다시시도 하십시요!", "알림창", MessageBoxButtons.OK);
+                    frm10.Update_DB();
+                    dB_Connect.Close();
+                    this.Close();
+                }
+                if(contains == true)
+                {
+                    MessageBox.Show("이미 등록된 업체입니다.\n다시시도 하십시요!", "알림창", MessageBoxButtons.OK);
+                    frm10.Update_DB();
+                    dB_Connect.Close();
+                    this.Close();
+                }
                 
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                dB_Connect.Close();
-                this.Close();
-            }
+                //sqlQuery = "SELECT * FROM `Company`";
+                //(CompanyID, Name, PhoneNumber) -> Company 테이블 컬럼
+                sqlQuery = $"INSERT INTO Company values ( '{textBox1.Text}', '{textBox2.Text}', '{companyNum}');";
+                try
+                {
+                    dB_Connect.SQLQuery(sqlQuery);
+                    MessageBox.Show("회사 정보 저장!");
 
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    frm10.Update_DB();
+                    dB_Connect.Close();
+                    this.Close();
+                }
+            }
         }
-
         private void Form11_FormClosing(object sender, FormClosingEventArgs e)
         {
             frm10.Update();
 
 
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 수량의 경우 숫자가 아니면 입력 불가
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 수량의 경우 숫자가 아니면 입력 불가
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // 수량의 경우 숫자가 아니면 입력 불가
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox3.Clear();
+            textBox4.Clear();
+
+            if (comboBox1.Text == "051")
+            {
+                textBox4.MaxLength = 3;
+            }
+            else
+            {
+                textBox4.MaxLength = 4;
+            }
         }
     }
 }

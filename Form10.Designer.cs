@@ -66,8 +66,10 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(398, 202);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // label1
             // 
@@ -75,7 +77,7 @@
             this.label1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(34, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 15);
+            this.label1.Size = new System.Drawing.Size(97, 12);
             this.label1.TabIndex = 1;
             this.label1.Text = "등록된 업체 목록";
             // 
@@ -107,6 +109,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "선택";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form10
             // 
