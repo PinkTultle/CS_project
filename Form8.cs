@@ -75,5 +75,39 @@ namespace SMP_cs
                 e.Handled = true;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dB_Connect = new DB_connect();
+            dB_Connect.Open();
+
+            if((MessageBox.Show("삭제 하시겠습니까?", "확인창", MessageBoxButtons.YesNo) == DialogResult.Yes))
+            {
+                try
+                {
+                    sqlQuery = $"DELETE FROM Items WHERE Items.ItemID ='{tg_item}'";
+                    dB_Connect.SQLQuery(sqlQuery);
+
+                    MessageBox.Show($"'{textBox1.Text}'가 삭제되었습니다.", "삭제 완료");
+
+                    dB_Connect.Close();
+
+                    frm2.Update_DB();
+
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            
+                
+        }
     }
 }
