@@ -35,7 +35,7 @@ namespace SMP_cs
             string sqlQuery = "SELECT CompanyID,Name FROM Company;";
             dt = dB_Connect.readSQL(sqlQuery);
 
-            string Check = $"{textBox1.Text}";
+            string Check = $"C{textBox1.Text}";
             string Check2 = $"{textBox2.Text}";
 
             bool contains = dt.AsEnumerable().Any(row => Check == row.Field<String>("CompanyID"));
@@ -66,7 +66,7 @@ namespace SMP_cs
             {
                 //sqlQuery = "SELECT * FROM `Company`";
                 //(CompanyID, Name, PhoneNumber) -> Company 테이블 컬럼
-                sqlQuery = $"INSERT INTO Company values ( '{textBox1.Text}', '{textBox2.Text}', '{companyNum}');";
+                sqlQuery = $"INSERT INTO Company values ( '{Check}', '{textBox2.Text}', '{companyNum}');";
                 try
                 {
                     dB_Connect.SQLQuery(sqlQuery);
@@ -84,6 +84,7 @@ namespace SMP_cs
                     dB_Connect.Close();
                     this.Close();
                 }
+
             }
         }
         private void Form11_FormClosing(object sender, FormClosingEventArgs e)

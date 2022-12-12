@@ -86,8 +86,6 @@ namespace SMP_cs
 
                 table.Clear();
                 table.Columns.Clear();
-                
-                sqlQuery = "SELECT * FROM `Company` ORDER BY `Name` DESC";
 
                 table = dB_Connect.readSQL(sqlQuery);
                 table.Columns[0].ColumnName = "회사ID";
@@ -138,10 +136,12 @@ namespace SMP_cs
                     sqlQuery = $"DELETE FROM Company WHERE Company.CompanyID = '{tg_companyID}'";
                     dB_Connect.SQLQuery(sqlQuery);
 
+                    frm4.change_textBox2("");
+                    Update_DB();
+
                     MessageBox.Show($"'{tg_companyName}'가 삭제되었습니다.", "삭제 완료");
-
+                    
                     dB_Connect.Close();
-
                     this.Close();
                 }catch(Exception ex)
                 {

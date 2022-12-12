@@ -64,13 +64,13 @@
             // 
             // chart3
             // 
+            this.chart3.BorderSkin.BackColor = System.Drawing.Color.GreenYellow;
             chartArea2.Name = "ChartArea1";
             this.chart3.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart3.Legends.Add(legend2);
             this.chart3.Location = new System.Drawing.Point(0, 0);
             this.chart3.Name = "chart3";
-            this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
