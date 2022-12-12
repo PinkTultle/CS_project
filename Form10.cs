@@ -167,7 +167,6 @@ namespace SMP_cs
 
             frm4.change_textBox2(Chan_val);
             this.Close();
-
         }
     }
 }

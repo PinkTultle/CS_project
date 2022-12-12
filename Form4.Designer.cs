@@ -55,6 +55,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(150, 21);
             this.textBox3.TabIndex = 18;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // textBox1
@@ -65,13 +66,14 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(150, 21);
             this.textBox1.TabIndex = 16;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(40, 147);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 14;
             this.label3.Text = "수량";
             // 
@@ -80,7 +82,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(40, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 13;
             this.label2.Text = "업체명";
             // 
@@ -89,7 +91,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(40, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 12;
             this.label1.Text = "물품명";
             // 
@@ -98,7 +100,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(113, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 12);
+            this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 21;
             this.label4.Text = "물품 출고";
             // 
@@ -139,7 +141,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ㄷ";
+            this.Text = "물품 출고";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

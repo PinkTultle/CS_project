@@ -61,6 +61,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(446, 21);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -115,6 +116,7 @@
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(613, 21);
             this.dateTimePicker2.Name = "dateTimePicker2";
