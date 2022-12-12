@@ -17,6 +17,9 @@ namespace SMP_cs
         DB_connect dB_Connect;
         DataTable table;
         string sqlQuery = ""; // sqlQuery문을 담을 문자열
+        
+        string tg_companyID; // 선택된 회사ID를 담을 문자열
+        string tg_companyName; // 선택된 회사명을 담을 문자열
         Form4 frm4;
 
         public Form10(Form4 form4)
@@ -71,8 +74,6 @@ namespace SMP_cs
             form11.ShowDialog();
         }
 
-
-
         public void Update_DB()
         {
             dB_Connect = new DB_connect();
@@ -82,6 +83,12 @@ namespace SMP_cs
 
             try
             {
+
+                table.Clear();
+                table.Columns.Clear();
+                
+                sqlQuery = "SELECT * FROM `Company` ORDER BY `Name` DESC";
+
                 table = dB_Connect.readSQL(sqlQuery);
                 table.Columns[0].ColumnName = "회사ID";
                 table.Columns[1].ColumnName = "회사명";
@@ -112,6 +119,35 @@ namespace SMP_cs
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dB_Connect = new DB_connect();
+            dB_Connect.Open();
+
+
+            DataGridViewRow selectRow = dataGridView1.SelectedRows[0]; // 선택된 행
+            tg_companyID = selectRow.Cells[0].Value.ToString(); // 선택된 행의 회사ID 값
+            tg_companyName = selectRow.Cells[1].Value.ToString();
+
+            if ((MessageBox.Show("해당 업체를 삭제하시겠습니까?", "확인창", MessageBoxButtons.YesNo) == DialogResult.Yes))
+            {
+                try
+                {
+                    sqlQuery = $"DELETE FROM Company WHERE Company.CompanyID = '{tg_companyID}'";
+                    dB_Connect.SQLQuery(sqlQuery);
+
+                    MessageBox.Show($"'{tg_companyName}'가 삭제되었습니다.", "삭제 완료");
+
+                    dB_Connect.Close();
+
+                    this.Close();
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
 
         }
 
@@ -131,6 +167,7 @@ namespace SMP_cs
 
             frm4.change_textBox2(Chan_val);
             this.Close();
+
         }
     }
 }
