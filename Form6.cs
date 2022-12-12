@@ -101,10 +101,17 @@ namespace SMP_cs
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0)
+            {
                 chart1.BringToFront();
-          
+                comboBox1.BringToFront();
+
+            }
             else if (comboBox1.SelectedIndex == 1)
+            {
                 chart3.BringToFront();
+                comboBox1.BringToFront();
+            }
+                
         }
     }
 }

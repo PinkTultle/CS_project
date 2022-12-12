@@ -88,7 +88,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "보유 물품수량",
             "총 출고수량"});
-            this.comboBox1.Location = new System.Drawing.Point(633, 12);
+            this.comboBox1.Location = new System.Drawing.Point(463, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 3;
@@ -98,7 +98,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(624, 450);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.chart3);
             this.Controls.Add(this.chart1);
