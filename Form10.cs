@@ -162,6 +162,7 @@ namespace SMP_cs
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+
             DataGridViewRow row = dataGridView1.SelectedRows[0];
             string Chan_val = row.Cells[1].Value.ToString();
 
