@@ -78,8 +78,8 @@ namespace SMP_cs
         public void change_textBox2(string val)
         {
             textBox2.Text = val;
-
         }
+        
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {

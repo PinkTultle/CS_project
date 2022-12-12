@@ -64,6 +64,7 @@
             // 
             // chart3
             // 
+
             chartArea6.Name = "ChartArea1";
             this.chart3.ChartAreas.Add(chartArea6);
             legend6.Name = "Legend1";
@@ -75,6 +76,7 @@
             series6.Legend = "Legend1";
             series6.Name = "Series1";
             this.chart3.Series.Add(series6);
+
             this.chart3.Size = new System.Drawing.Size(611, 456);
             this.chart3.TabIndex = 2;
             this.chart3.Text = "chart3";

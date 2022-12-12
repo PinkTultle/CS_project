@@ -151,7 +151,6 @@
             this.Name = "Form11";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "업체 등록";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form11_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
