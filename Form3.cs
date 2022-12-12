@@ -33,12 +33,12 @@ namespace SMP_cs
             
             dB_dt= dB_Connect.Copy_DT(dB_dt, "Items");
 
-            string Check = $"P{textBox1.Text}";
+            string Check = $"{textBox1.Text}";
             bool contains = dB_dt.AsEnumerable().Any(row => Check == row.Field<String>("Name"));
 
             if (contains == false)
             {
-                sqlQuery = $"INSERT INTO Items values('{textBox4.Text}','{Check}',{textBox3.Text},{textBox2.Text});";
+                sqlQuery = $"INSERT INTO Items values('P{textBox4.Text}','{Check}',{textBox3.Text},{textBox2.Text});";
                 dB_Connect.SQLQuery(sqlQuery);
             }
             else
